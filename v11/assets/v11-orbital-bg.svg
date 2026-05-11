@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="1920" height="1080" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <radialGradient id="base" cx="66%" cy="36%" r="78%">
+      <stop offset="0" stop-color="#061f3d"/>
+      <stop offset="0.22" stop-color="#071630"/>
+      <stop offset="0.56" stop-color="#06091b"/>
+      <stop offset="1" stop-color="#02050e"/>
+    </radialGradient>
+    <radialGradient id="violet" cx="39%" cy="25%" r="46%">
+      <stop offset="0" stop-color="#5c22ca" stop-opacity=".20"/>
+      <stop offset="0.45" stop-color="#30105f" stop-opacity=".12"/>
+      <stop offset="1" stop-color="#000" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="blue" cx="82%" cy="15%" r="38%">
+      <stop offset="0" stop-color="#0097db" stop-opacity=".19"/>
+      <stop offset="0.46" stop-color="#00447a" stop-opacity=".10"/>
+      <stop offset="1" stop-color="#000" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="arc" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#1b135b" stop-opacity=".10"/>
+      <stop offset=".36" stop-color="#6f32ff" stop-opacity=".70"/>
+      <stop offset=".50" stop-color="#9a54ff" stop-opacity="1"/>
+      <stop offset=".61" stop-color="#5c76ff" stop-opacity="1"/>
+      <stop offset=".73" stop-color="#24e4ff" stop-opacity=".96"/>
+      <stop offset="1" stop-color="#0077bf" stop-opacity=".17"/>
+    </linearGradient>
+    <filter id="glow" x="-25%" y="-250%" width="150%" height="600%">
+      <feGaussianBlur stdDeviation="8" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="smallGlow" x="-300%" y="-300%" width="700%" height="700%">
+      <feGaussianBlur stdDeviation="3.5" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <pattern id="dots" width="20" height="20" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.2" fill="#5e34ff" opacity=".48"/>
+    </pattern>
+  </defs>
+  <rect width="1920" height="1080" fill="url(#base)"/>
+  <rect width="1920" height="1080" fill="url(#violet)"/>
+  <rect width="1920" height="1080" fill="url(#blue)"/>
+  <path d="M -160 532 C 305 344 706 257 1160 212 C 1400 188 1630 164 1995 163" fill="none" stroke="#051934" stroke-width="12" opacity=".46"/>
+  <path d="M -155 527 C 303 340 704 254 1160 208 C 1400 184 1630 160 1995 160" fill="none" stroke="url(#arc)" stroke-width="4.6" filter="url(#glow)"/>
+  <path d="M -150 555 C 310 356 716 269 1172 224 C 1418 199 1641 174 1990 174" fill="none" stroke="#142766" stroke-width="3" opacity=".38"/>
+  <g transform="translate(1728 178)" opacity=".70">
+    <circle r="158" fill="none" stroke="#58647e" stroke-width="1.1" opacity=".38"/>
+    <circle r="108" fill="none" stroke="#58647e" stroke-width="1.1" opacity=".34"/>
+    <circle r="62" fill="none" stroke="#58647e" stroke-width="1" opacity=".32"/>
+    <line x1="-111" y1="-70" x2="0" y2="0" stroke="#58647e" stroke-width="1" opacity=".23"/>
+    <line x1="43" y1="52" x2="0" y2="0" stroke="#58647e" stroke-width="1" opacity=".22"/>
+    <line x1="21" y1="126" x2="0" y2="0" stroke="#58647e" stroke-width="1" opacity=".16"/>
+    <circle r="6" fill="#a66dff" filter="url(#smallGlow)"/>
+    <circle cx="-86" cy="-67" r="4.2" fill="#a46cff" filter="url(#smallGlow)"/>
+    <circle cx="44" cy="52" r="4" fill="#8d57ff" filter="url(#smallGlow)"/>
+    <circle cx="77" cy="-42" r="2.2" fill="#ffffff" opacity=".76"/>
+    <circle cx="21" cy="126" r="2.2" fill="#a46cff"/>
+    <circle cx="42" cy="162" r="2" fill="#8e58ff"/>
+    <circle cx="-124" cy="-98" r="2" fill="#7988ff"/>
+  </g>
+  <circle cx="1393" cy="281" r="2" fill="#788cff" opacity=".78"/>
+  <rect x="1762" y="996" width="96" height="58" fill="url(#dots)" opacity=".52"/>
+</svg>

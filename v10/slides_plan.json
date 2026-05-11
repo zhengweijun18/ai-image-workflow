@@ -1,0 +1,665 @@
+[
+  {
+    "page": 1,
+    "title": "💡AI生图经验分享-从提示词到可复用工作流",
+    "type": "cover",
+    "chapter": "开场",
+    "range": [
+      1,
+      1
+    ],
+    "has_images": false,
+    "has_code": false,
+    "layout": "single"
+  },
+  {
+    "page": 2,
+    "title": "定位 / 目标",
+    "type": "content",
+    "chapter": "开场",
+    "range": [
+      2,
+      4
+    ],
+    "has_images": false,
+    "has_code": false,
+    "layout": "single"
+  },
+  {
+    "page": 3,
+    "title": "大纲",
+    "type": "content",
+    "chapter": "演讲大纲",
+    "range": [
+      5,
+      11
+    ],
+    "has_images": false,
+    "has_code": false,
+    "layout": "single"
+  },
+  {
+    "page": 4,
+    "title": "一、逆向工程：从参考图反推提示词",
+    "type": "section",
+    "chapter": "第一章",
+    "range": [
+      12,
+      12
+    ],
+    "has_images": false,
+    "has_code": false,
+    "layout": "single"
+  },
+  {
+    "page": 5,
+    "title": "第一步：素材搜集",
+    "type": "media-left-bottom",
+    "chapter": "第一章",
+    "range": [
+      13,
+      14
+    ],
+    "has_images": true,
+    "has_code": false,
+    "layout": "left-bottom"
+  },
+  {
+    "page": 6,
+    "title": "第二步：逆向推导",
+    "type": "code",
+    "chapter": "第一章",
+    "range": [
+      15,
+      17
+    ],
+    "has_images": false,
+    "has_code": true,
+    "layout": "two"
+  },
+  {
+    "page": 7,
+    "title": "GPT5.5模型输出的提示词",
+    "type": "media",
+    "chapter": "第一章",
+    "range": [
+      18,
+      19
+    ],
+    "has_images": true,
+    "has_code": false,
+    "layout": "two"
+  },
+  {
+    "page": 8,
+    "title": "第三步：生成第一版结果",
+    "type": "media",
+    "chapter": "第一章",
+    "range": [
+      20,
+      21
+    ],
+    "has_images": true,
+    "has_code": false,
+    "layout": "two"
+  },
+  {
+    "page": 9,
+    "title": "若生成图与原图存在效果差距",
+    "type": "code",
+    "chapter": "第一章",
+    "range": [
+      22,
+      23
+    ],
+    "has_images": false,
+    "has_code": true,
+    "layout": "two"
+  },
+  {
+    "page": 10,
+    "title": "GPT5.5迭代的提示词",
+    "type": "media",
+    "chapter": "第一章",
+    "range": [
+      24,
+      25
+    ],
+    "has_images": true,
+    "has_code": false,
+    "layout": "two"
+  },
+  {
+    "page": 11,
+    "title": "结论：多数情况下",
+    "type": "takeaway",
+    "chapter": "第一章",
+    "range": [
+      26,
+      27
+    ],
+    "has_images": true,
+    "has_code": false,
+    "layout": "two"
+  },
+  {
+    "page": 12,
+    "title": "二、只有模糊想法时：用结构化公式补全画面",
+    "type": "formula",
+    "chapter": "第二章",
+    "range": [
+      29,
+      42
+    ],
+    "has_images": false,
+    "has_code": false,
+    "layout": "formula"
+  },
+  {
+    "page": 13,
+    "title": "案例：从“B 端科技感插画图标”开始补全 Prompt",
+    "type": "code",
+    "chapter": "第二章",
+    "range": [
+      43,
+      44
+    ],
+    "has_images": false,
+    "has_code": true,
+    "layout": "two"
+  },
+  {
+    "page": 14,
+    "title": "GPT5.5模型输出的提示词",
+    "type": "media",
+    "chapter": "第二章",
+    "range": [
+      45,
+      46
+    ],
+    "has_images": true,
+    "has_code": false,
+    "layout": "two"
+  },
+  {
+    "page": 15,
+    "title": "即梦效果 / gpt-image2.0效果",
+    "type": "compare",
+    "chapter": "第二章",
+    "range": [
+      48,
+      50
+    ],
+    "has_images": true,
+    "has_code": false,
+    "layout": "two"
+  },
+  {
+    "page": 16,
+    "title": "三、已有参考图：组图生成与风格迭代",
+    "type": "section",
+    "chapter": "第三章",
+    "range": [
+      51,
+      51
+    ],
+    "has_images": false,
+    "has_code": false,
+    "layout": "single"
+  },
+  {
+    "page": 17,
+    "title": "组图的关键不是一次成功",
+    "type": "media",
+    "chapter": "第三章",
+    "range": [
+      52,
+      53
+    ],
+    "has_images": true,
+    "has_code": false,
+    "layout": "two"
+  },
+  {
+    "page": 18,
+    "title": "组图 Prompt",
+    "type": "code",
+    "chapter": "第三章",
+    "range": [
+      54,
+      54
+    ],
+    "has_images": false,
+    "has_code": true,
+    "layout": "two"
+  },
+  {
+    "page": 19,
+    "title": "第一次生成：先验证整体方向",
+    "type": "media",
+    "chapter": "第三章",
+    "range": [
+      55,
+      56
+    ],
+    "has_images": true,
+    "has_code": false,
+    "layout": "two"
+  },
+  {
+    "page": 20,
+    "title": "如果生成图与参考图存在差距",
+    "type": "code-media",
+    "chapter": "第三章",
+    "range": [
+      57,
+      59
+    ],
+    "has_images": true,
+    "has_code": true,
+    "layout": "two"
+  },
+  {
+    "page": 21,
+    "title": "第二次迭代：重点修正光源、材质和构图",
+    "type": "code-media",
+    "chapter": "第三章",
+    "range": [
+      60,
+      62
+    ],
+    "has_images": true,
+    "has_code": true,
+    "layout": "two"
+  },
+  {
+    "page": 22,
+    "title": "第三次迭代：结果已经接近，可用于总结稳定约束",
+    "type": "code-media",
+    "chapter": "第三章",
+    "range": [
+      63,
+      67
+    ],
+    "has_images": true,
+    "has_code": true,
+    "layout": "two"
+  },
+  {
+    "page": 23,
+    "title": "四、提示词工具：把简单需求转成结构化 Prompt",
+    "type": "section",
+    "chapter": "第四章",
+    "range": [
+      69,
+      69
+    ],
+    "has_images": false,
+    "has_code": false,
+    "layout": "single"
+  },
+  {
+    "page": 24,
+    "title": "火山引擎的提示词工具",
+    "type": "media",
+    "chapter": "第四章",
+    "range": [
+      70,
+      73
+    ],
+    "has_images": true,
+    "has_code": false,
+    "layout": "bottom-images"
+  },
+  {
+    "page": 25,
+    "title": "五、精细化编辑：按变量控制生成结果",
+    "type": "section",
+    "chapter": "第五章",
+    "range": [
+      74,
+      75
+    ],
+    "has_images": false,
+    "has_code": false,
+    "layout": "single"
+  },
+  {
+    "page": 26,
+    "title": "局部控制（控制变量）",
+    "type": "control-grid",
+    "chapter": "第五章",
+    "range": [
+      76,
+      100
+    ],
+    "has_images": false,
+    "has_code": false,
+    "layout": "control-grid"
+  },
+  {
+    "page": 27,
+    "title": "常见问题清单：生成效果不稳定时先检查什么",
+    "type": "table",
+    "chapter": "常见问题",
+    "range": [
+      102,
+      103
+    ],
+    "has_images": false,
+    "has_code": false,
+    "layout": "single"
+  },
+  {
+    "page": 28,
+    "title": "六、提示词技巧：提高稳定性的关键规则",
+    "type": "section",
+    "chapter": "第六章",
+    "range": [
+      104,
+      104
+    ],
+    "has_images": false,
+    "has_code": false,
+    "layout": "single"
+  },
+  {
+    "page": 29,
+    "title": "提示词技巧清单",
+    "type": "content",
+    "chapter": "第六章",
+    "range": [
+      105,
+      118
+    ],
+    "has_images": false,
+    "has_code": false,
+    "layout": "single"
+  },
+  {
+    "page": 30,
+    "title": "七、模型选择：GPT Image 2 / Nano-Banana-2 的优势",
+    "type": "section",
+    "chapter": "第七章",
+    "range": [
+      120,
+      120
+    ],
+    "has_images": false,
+    "has_code": false,
+    "layout": "single"
+  },
+  {
+    "page": 31,
+    "title": "7.1 案例与使用技巧",
+    "type": "code",
+    "chapter": "第七章",
+    "range": [
+      122,
+      132
+    ],
+    "has_images": false,
+    "has_code": true,
+    "layout": "two"
+  },
+  {
+    "page": 32,
+    "title": "7.2 Image 2 VS 即梦：适用场景对比",
+    "type": "table",
+    "chapter": "第七章",
+    "range": [
+      134,
+      135
+    ],
+    "has_images": false,
+    "has_code": false,
+    "layout": "single"
+  },
+  {
+    "page": 33,
+    "title": "八、建议使用 Agent 模式：从临时对话到长期工作流",
+    "type": "content",
+    "chapter": "第八章",
+    "range": [
+      136,
+      141
+    ],
+    "has_images": false,
+    "has_code": false,
+    "layout": "single"
+  },
+  {
+    "page": 34,
+    "title": "九、可沉淀的长期知识资产",
+    "type": "content",
+    "chapter": "第九章",
+    "range": [
+      143,
+      151
+    ],
+    "has_images": false,
+    "has_code": false,
+    "layout": "single"
+  },
+  {
+    "page": 35,
+    "title": "十、案例：把设计规范生成流程沉淀为 Skill",
+    "type": "code-media",
+    "chapter": "第十章",
+    "range": [
+      152,
+      155
+    ],
+    "has_images": true,
+    "has_code": true,
+    "layout": "two"
+  },
+  {
+    "page": 36,
+    "title": "10.1 agent分析的具体过程",
+    "type": "code",
+    "chapter": "第十章",
+    "range": [
+      156,
+      157
+    ],
+    "has_images": false,
+    "has_code": true,
+    "layout": "two"
+  },
+  {
+    "page": 37,
+    "title": "第一次输出 / 第二次输出，基本可用了",
+    "type": "bottom-images",
+    "chapter": "第十章",
+    "range": [
+      158,
+      161
+    ],
+    "has_images": true,
+    "has_code": false,
+    "layout": "bottom-images"
+  },
+  {
+    "page": 38,
+    "title": "10.2 固化输入输出，创建 Skill / 10.3 优化迭代 Skill",
+    "type": "bottom-images",
+    "chapter": "第十章",
+    "range": [
+      162,
+      166
+    ],
+    "has_images": true,
+    "has_code": false,
+    "layout": "bottom-images"
+  },
+  {
+    "page": 39,
+    "title": "10.4 回溯整个 Loop：从单次案例抽象为可复用方法",
+    "type": "code-media",
+    "chapter": "第十章",
+    "range": [
+      167,
+      171
+    ],
+    "has_images": true,
+    "has_code": true,
+    "layout": "two"
+  },
+  {
+    "page": 40,
+    "title": "10.4.1 沉淀的Skill 的部分内容",
+    "type": "code",
+    "chapter": "第十章",
+    "range": [
+      172,
+      173
+    ],
+    "has_images": false,
+    "has_code": true,
+    "layout": "two"
+  },
+  {
+    "page": 41,
+    "title": "启发：比如以后可以沉淀",
+    "type": "content",
+    "chapter": "第十章",
+    "range": [
+      174,
+      182
+    ],
+    "has_images": false,
+    "has_code": false,
+    "layout": "single"
+  },
+  {
+    "page": 42,
+    "title": "最终迭代后的 Skill 内容",
+    "type": "code",
+    "chapter": "第十章",
+    "range": [
+      183,
+      183
+    ],
+    "has_images": false,
+    "has_code": true,
+    "layout": "two"
+  },
+  {
+    "page": 43,
+    "title": "10.5 最后测试：用真实需求检验 Skill",
+    "type": "media",
+    "chapter": "第十章",
+    "range": [
+      185,
+      187
+    ],
+    "has_images": true,
+    "has_code": false,
+    "layout": "two"
+  },
+  {
+    "page": 44,
+    "title": "十一、Skill 如何把生图流程标准化、可复用、可批量执行",
+    "type": "section",
+    "chapter": "第十一章",
+    "range": [
+      189,
+      189
+    ],
+    "has_images": false,
+    "has_code": false,
+    "layout": "single"
+  },
+  {
+    "page": 45,
+    "title": "如果只有agent，适合临时需求",
+    "type": "content",
+    "chapter": "第十一章",
+    "range": [
+      190,
+      199
+    ],
+    "has_images": false,
+    "has_code": false,
+    "layout": "single"
+  },
+  {
+    "page": 46,
+    "title": "Skill 的好处适合长期生产，更适合反复生成、持续迭代、想沉淀工作流的用法",
+    "type": "content",
+    "chapter": "第十一章",
+    "range": [
+      200,
+      210
+    ],
+    "has_images": false,
+    "has_code": false,
+    "layout": "single"
+  },
+  {
+    "page": 47,
+    "title": "十二、推荐安装：gpt-image-2 Skill",
+    "type": "code-media",
+    "chapter": "第十二章",
+    "range": [
+      211,
+      220
+    ],
+    "has_images": true,
+    "has_code": true,
+    "layout": "two"
+  },
+  {
+    "page": 48,
+    "title": "END：把 AI 生图当成可复用流程，而不是一次次性碰运气",
+    "type": "summary",
+    "chapter": "收束",
+    "range": [
+      221,
+      225
+    ],
+    "has_images": false,
+    "has_code": false,
+    "layout": "single"
+  },
+  {
+    "page": 49,
+    "title": "本篇分享文档由 Codex Cli 整理完成",
+    "type": "media",
+    "chapter": "尾页",
+    "range": [
+      226,
+      228
+    ],
+    "has_images": true,
+    "has_code": false,
+    "layout": "two"
+  },
+  {
+    "page": 50,
+    "title": "本篇PPT由“html-ppt-skill“生成",
+    "type": "code-media",
+    "chapter": "尾页",
+    "range": [
+      229,
+      234
+    ],
+    "has_images": true,
+    "has_code": true,
+    "layout": "two"
+  },
+  {
+    "page": 51,
+    "title": "THANKS",
+    "type": "thanks",
+    "chapter": "尾页",
+    "range": [
+      235,
+      235
+    ],
+    "has_images": false,
+    "has_code": false,
+    "layout": "single"
+  }
+]
