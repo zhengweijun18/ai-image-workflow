@@ -28,7 +28,7 @@ p{font-size:19px;line-height:1.58;margin:0 0 10px;white-space:pre-wrap}
 .formula-layout h3,.control-layout h3{font-size:17px;margin-top:8px}
 .kicker{margin:0 0 6px}
 .bullet{padding-left:0}
-img.zoomable{width:100%;max-height:86vh;object-fit:contain;object-position:left top;border-radius:10px;cursor:zoom-in;margin:0 0 10px;display:block}
+img.zoomable{width:100%;max-height:86vh;object-fit:contain;object-position:left top;border-radius:12px;cursor:zoom-in;margin:0 0 10px;display:block;overflow:hidden}
 .left-bottom-media{margin-top:18px;max-width:64%;display:flex;justify-content:flex-start;align-items:flex-start}
 .left-bottom-media img{max-height:78vh}
 .bottom-media{display:flex;gap:16px;justify-content:flex-start;align-items:flex-start;margin-top:14px;width:100%}
@@ -49,7 +49,7 @@ strong{font-weight:800}
 .deck-footer{bottom:18px}
 .modal{position:fixed;inset:0;display:none;background:rgba(255,255,255,.94);z-index:100;align-items:center;justify-content:center;cursor:zoom-out}
 .modal.open{display:flex}
-.modal img{max-width:none;max-height:none;user-select:none;cursor:grab;transform-origin:center center;border-radius:10px}
+.modal img{max-width:none;max-height:none;user-select:none;cursor:grab;transform-origin:center center;border-radius:12px}
 .modal img.dragging{cursor:grabbing}
 .focus-page{display:flex;flex-direction:column;justify-content:center;min-height:calc(100vh - 150px)}
 .focus-page .main-scroll{display:flex;flex-direction:column;justify-content:center;max-height:calc(100vh - 160px)}
@@ -75,7 +75,7 @@ section[data-page="2"] .main-scroll{display:block}
 .page2-top{margin-bottom:28px}.page2-goal h3{font-size:30px;line-height:1.28;margin:0 0 16px;color:var(--text-1)}
 .goal-card-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;width:100%}.goal-card{height:240px;display:flex;flex-direction:column;justify-content:center}
 section[data-page="3"] .main-scroll{display:flex;flex-direction:column;justify-content:center}.agenda-layout{width:100%}.agenda-head{margin-bottom:36px}.agenda-head .slide-title{font-size:58px;line-height:1;font-weight:900;margin:0 0 12px;white-space:nowrap}.agenda-subtitle{font-size:17px!important;line-height:1.35!important;font-weight:400!important;color:#A3AAB5!important;margin:0!important}.agenda-card-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;width:100%}.agenda-card{min-height:168px}.agenda-card .stat-title{font-size:30px}
-.code-tall-130 pre{max-height:52vh}.code-tall-150 pre{max-height:50vh}.code-tall-180 pre{max-height:59vh}.code-tall-200 pre{max-height:66vh}
+.code-tall-130 pre{max-height:52vh}.code-tall-150 pre{max-height:50vh}.code-tall-180 pre{max-height:71vh}.code-tall-200 pre{max-height:66vh}
 .formula-bullet{display:flex;align-items:center;gap:10px;margin-left:28px}.formula-bullet span,.asset-bullet span{width:9px;height:9px;border-radius:50%;background:#1f6feb;display:inline-block;flex:0 0 auto}.asset-bullet{display:flex;align-items:center;gap:10px;margin-left:28px}
 .image-caption-row{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;width:100%;margin-bottom:8px}.image-caption-row p{font-size:18px;line-height:1.4;margin:0;text-align:left;color:var(--text-1)}
 .text-link{color:#0969da;text-decoration:none}.text-link:hover{text-decoration:underline}.muted-glossary{color:#8b949e!important;font-size:13px!important;line-height:1.42!important}.content-card{background:#fff;border:1px solid #F1F3F5;border-radius:20px;box-shadow:0 4px 16px rgba(0,0,0,.04);padding:28px 32px;box-sizing:border-box}.danger-label,.danger-text{color:#c62828!important}.danger-label{font-weight:800}.equal-image-row img{height:42vh!important;max-height:42vh!important;object-fit:contain}.vertical-center-content{display:flex;flex-direction:column;justify-content:center}
@@ -93,6 +93,22 @@ section[data-page="3"] .agenda-card .stat-desc{font-size:16px;line-height:1.38}
 .formula-card{background:#fff;border:1px solid #F1F3F5;border-radius:20px;box-shadow:0 4px 16px rgba(0,0,0,.04);padding:26px 32px;margin:14px 0 18px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px 28px}
 .formula-card .formula-bullet{margin:0;font-size:17px;line-height:1.45}
 .summary-card{margin-top:24px;padding:32px 36px}.summary-card p{margin-bottom:18px;line-height:1.75}
+
+
+.left-bottom-media,.bottom-media{overflow:hidden;border-radius:12px}.bottom-media img,.left-bottom-media img{border-radius:12px}.bottom-media{max-width:max-content}.bottom-media:has(img:nth-child(2)){max-width:100%}
+
+
+section[data-page="12"] .formula-card{padding:34px 40px;gap:26px 36px;margin:22px 0 24px}
+section[data-page="12"] .formula-card .formula-bullet{font-size:22px;font-weight:800;line-height:1.6}
+section[data-page="12"] .formula-card .formula-bullet span{width:11px;height:11px}
+
+
+.control-two-col{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px 28px;align-content:center}
+.control-two-col .slide-title{grid-column:1/-1;margin-bottom:8px}
+.control-two-col h3{font-size:15px;margin:6px 0 2px}.control-two-col p{font-size:12px;line-height:1.34;margin:0 0 3px}.control-two-col .muted-glossary{font-size:11px!important;line-height:1.28!important}
+
+
+.page5-split .main-scroll{display:grid;grid-template-columns:minmax(0,.9fr) minmax(360px,1.1fr);gap:42px;align-items:center}.page5-copy{align-self:center}.page5-media{justify-self:end;width:100%;max-width:720px;overflow:hidden;border-radius:12px}.page5-media img{width:100%;max-height:68vh;border-radius:12px;object-fit:contain;object-position:right center}
 
 @media(max-width:900px){.two-col{grid-template-columns:1fr}.slide{padding:34px 26px}.left-bottom-media{max-width:100%}.side-scroll{max-height:34vh}}
 </style>
@@ -129,8 +145,8 @@ section[data-page="3"] .agenda-card .stat-desc{font-size:16px;line-height:1.38}
   </section>
   <section class="slide" data-page="5" data-title="第一步：素材搜集">
     <p class="kicker">第一章</p>
-    <div class="single-col">
-      <main class="main-scroll"><h1 class="slide-title">第一步：素材搜集</h1><p>先找到类似目标风格、构图或材质的参考图。</p><div class="left-bottom-media"><img class="zoomable" src="images/rId5_image1.png" alt="rId5" loading="lazy"></div></main>
+    <div class="page5-split">
+      <main class="main-scroll"><div class="page5-copy"><h1 class="slide-title">第一步：素材搜集</h1><p>先找到类似目标风格、构图或材质的参考图。</p></div><div class="page5-media"><img class="zoomable" src="images/rId5_image1.png" alt="rId5" loading="lazy"></div></main>
       
     </div>
     <div class="deck-footer"><span>AI 生图经验分享</span><span class="slide-number" data-current="5" data-total="51"></span></div>
@@ -138,10 +154,9 @@ section[data-page="3"] .agenda-card .stat-desc{font-size:16px;line-height:1.38}
   <section class="slide" data-page="6" data-title="第二步：逆向推导">
     <p class="kicker">第一章</p>
     <div class="single-col">
-      <main class="main-scroll"><h1 class="slide-title">第二步：逆向推导</h1><p>使用“AI 图像分析师”提示词模板，让模型先拆图，再反推出可执行的生图指令。</p><p>AI提示词反推模板：</p><div class="code-wrap code-tall-130">
-  <div class="code-title">AI提示词反推模板：</div>
-  <pre><code>
-你是一位专业的图像分析师和提示词工程师。
+      <main class="main-scroll"><h1 class="slide-title">第二步：逆向推导</h1><p>使用“AI 图像分析师”提示词模板，让模型先拆图，再反推出可执行的生图指令。</p><div class="code-wrap code-tall-130">
+  <div class="code-title"></div>
+  <pre><code>你是一位专业的图像分析师和提示词工程师。
 #任务
 你的任务是分析我上传的这张参考图片，并为我生成一段结构化的图片生成提示词，目标是让即梦能够最大程度上复现原图的风格、内容和构图。
 
@@ -176,7 +191,7 @@ section[data-page="3"] .agenda-card .stat-desc{font-size:16px;line-height:1.38}
   <section class="slide" data-page="8" data-title="第三步：生成第一版结果">
     <p class="kicker">第一章</p>
     <div class="single-col">
-      <main class="main-scroll"><h1 class="slide-title">第三步：生成第一版结果</h1><p>第三步：将反推提示词粘贴到即梦或其他生图工具中，先生成第一版结果。</p><div class="bottom-media"><img class="zoomable" src="images/rId7_image3.png" alt="rId7" loading="lazy"></div></main>
+      <main class="main-scroll"><h1 class="slide-title">第三步：生成第一版结果</h1><p>将反推提示词粘贴到即梦或其他生图工具中，先生成第一版结果。</p><div class="bottom-media"><img class="zoomable" src="images/rId7_image3.png" alt="rId7" loading="lazy"></div></main>
       
     </div>
     <div class="deck-footer"><span>AI 生图经验分享</span><span class="slide-number" data-current="8" data-total="51"></span></div>
@@ -205,7 +220,7 @@ section[data-page="3"] .agenda-card .stat-desc{font-size:16px;line-height:1.38}
   <section class="slide" data-page="11" data-title="结论：多数情况下">
     <p class="kicker">第一章</p>
     <div class="single-col">
-      <main class="main-scroll"><h1 class="slide-title">结论：多数情况下</h1><div class="bottom-media"><img class="zoomable" src="images/rId9_image5.png" alt="rId9" loading="lazy"></div></main>
+      <main class="main-scroll"><h1 class="slide-title">结论：多数情况下</h1><p>完成 1 次Loop 后，结果已经可以进入可用区间。</p><div class="bottom-media"><img class="zoomable" src="images/rId9_image5.png" alt="rId9" loading="lazy"></div></main>
       
     </div>
     <div class="deck-footer"><span>AI 生图经验分享</span><span class="slide-number" data-current="11" data-total="51"></span></div>
@@ -349,7 +364,7 @@ section[data-page="3"] .agenda-card .stat-desc{font-size:16px;line-height:1.38}
   <section class="slide" data-page="26" data-title="局部控制（控制变量）">
     <p class="kicker">第五章</p>
     <div class="control-layout">
-      <main class="main-scroll"><h1 class="slide-title"><strong>局部控制（控制变量）</strong></h1><h3><strong>5.1 视角</strong></h3><p>编辑指令： 将图1的视角改为参考图2的视角</p><p class="muted-glossary">推荐词库： 2.5D视角、等距透视、平视视角、正面展示、轻微右转、主体居中</p><h3><strong>5.2 场景</strong></h3><p>编辑指令： 将图1的场景改为参考图2的场景</p><p class="muted-glossary">推荐词库： 深蓝纯色背景、极简背景、悬浮展示、科技场景、企业级界面</p><h3><strong>5.3 风格</strong></h3><p>编辑指令： 将图1的风格改为参考图2的风格</p><p class="muted-glossary">推荐词库： 玻璃拟态、B端科技感、3D UI图标、Apple风格、极简高级、企业级产品视觉</p><h3><strong>5.4 材质</strong></h3><p>编辑指令： 将图1的材质改为参考图2的材质</p><p class="muted-glossary">推荐词库： 半透明玻璃、亚克力、磨砂塑料、冰蓝描边、自然折射、柔和高光</p><h3><strong>5.5 光照</strong></h3><p>编辑指令： 将图1的光照改为参考图2的光照</p><p class="muted-glossary">推荐词库： 柔和冷光、顶部与左前方光源、轻微阴影、悬浮感、克制高光</p><h3><strong>5.6 色彩</strong></h3><p>编辑指令： 将图1的色彩改为参考图2的色彩</p><p class="muted-glossary">推荐词库： 深蓝背景、亮蓝、冰蓝、青色、白色高光、冷色调、高饱和</p><h3><strong>5.7 构图</strong></h3><p>编辑指令： 将图1的构图改为参考图2的构图</p><p class="muted-glossary">推荐词库： 主体居中、小巧精致、占画面35%到45%、留白充足、比例统一</p><h3><strong>5.8 细节</strong></h3><p>编辑指令： 将图1的细节改为参考图2的细节</p><p class="muted-glossary">推荐词库： 圆角造型、边框细腻、结构轻薄、单一完整主体、无文字、无杂物</p></main>
+      <main class="main-scroll control-two-col"><h1 class="slide-title"><strong>局部控制（控制变量）</strong></h1><h3><strong>5.1 视角</strong></h3><p>编辑指令： 将图1的视角改为参考图2的视角</p><p class="muted-glossary">推荐词库： 2.5D视角、等距透视、平视视角、正面展示、轻微右转、主体居中</p><h3><strong>5.2 场景</strong></h3><p>编辑指令： 将图1的场景改为参考图2的场景</p><p class="muted-glossary">推荐词库： 深蓝纯色背景、极简背景、悬浮展示、科技场景、企业级界面</p><h3><strong>5.3 风格</strong></h3><p>编辑指令： 将图1的风格改为参考图2的风格</p><p class="muted-glossary">推荐词库： 玻璃拟态、B端科技感、3D UI图标、Apple风格、极简高级、企业级产品视觉</p><h3><strong>5.4 材质</strong></h3><p>编辑指令： 将图1的材质改为参考图2的材质</p><p class="muted-glossary">推荐词库： 半透明玻璃、亚克力、磨砂塑料、冰蓝描边、自然折射、柔和高光</p><h3><strong>5.5 光照</strong></h3><p>编辑指令： 将图1的光照改为参考图2的光照</p><p class="muted-glossary">推荐词库： 柔和冷光、顶部与左前方光源、轻微阴影、悬浮感、克制高光</p><h3><strong>5.6 色彩</strong></h3><p>编辑指令： 将图1的色彩改为参考图2的色彩</p><p class="muted-glossary">推荐词库： 深蓝背景、亮蓝、冰蓝、青色、白色高光、冷色调、高饱和</p><h3><strong>5.7 构图</strong></h3><p>编辑指令： 将图1的构图改为参考图2的构图</p><p class="muted-glossary">推荐词库： 主体居中、小巧精致、占画面35%到45%、留白充足、比例统一</p><h3><strong>5.8 细节</strong></h3><p>编辑指令： 将图1的细节改为参考图2的细节</p><p class="muted-glossary">推荐词库： 圆角造型、边框细腻、结构轻薄、单一完整主体、无文字、无杂物</p></main>
       
     </div>
     <div class="deck-footer"><span>AI 生图经验分享</span><span class="slide-number" data-current="26" data-total="51"></span></div>
