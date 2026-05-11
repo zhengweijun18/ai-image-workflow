@@ -28,7 +28,7 @@ p{font-size:19px;line-height:1.58;margin:0 0 10px;white-space:pre-wrap}
 .formula-layout h3,.control-layout h3{font-size:17px;margin-top:8px}
 .kicker{margin:0 0 6px}
 .bullet{padding-left:0}
-img.zoomable{width:100%;max-height:86vh;object-fit:contain;object-position:left top;border-radius:0;cursor:zoom-in;margin:0 0 10px;display:block}
+img.zoomable{width:100%;max-height:86vh;object-fit:contain;object-position:left top;border-radius:10px;cursor:zoom-in;margin:0 0 10px;display:block}
 .left-bottom-media{margin-top:18px;max-width:64%;display:flex;justify-content:flex-start;align-items:flex-start}
 .left-bottom-media img{max-height:78vh}
 .bottom-media{display:flex;gap:16px;justify-content:flex-start;align-items:flex-start;margin-top:14px;width:100%}
@@ -49,7 +49,7 @@ strong{font-weight:800}
 .deck-footer{bottom:18px}
 .modal{position:fixed;inset:0;display:none;background:rgba(255,255,255,.94);z-index:100;align-items:center;justify-content:center;cursor:zoom-out}
 .modal.open{display:flex}
-.modal img{max-width:none;max-height:none;user-select:none;cursor:grab;transform-origin:center center;border-radius:0}
+.modal img{max-width:none;max-height:none;user-select:none;cursor:grab;transform-origin:center center;border-radius:10px}
 .modal img.dragging{cursor:grabbing}
 .focus-page{display:flex;flex-direction:column;justify-content:center;min-height:calc(100vh - 150px)}
 .focus-page .main-scroll{display:flex;flex-direction:column;justify-content:center;max-height:calc(100vh - 160px)}
@@ -75,10 +75,24 @@ section[data-page="2"] .main-scroll{display:block}
 .page2-top{margin-bottom:28px}.page2-goal h3{font-size:30px;line-height:1.28;margin:0 0 16px;color:var(--text-1)}
 .goal-card-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;width:100%}.goal-card{height:240px;display:flex;flex-direction:column;justify-content:center}
 section[data-page="3"] .main-scroll{display:flex;flex-direction:column;justify-content:center}.agenda-layout{width:100%}.agenda-head{margin-bottom:36px}.agenda-head .slide-title{font-size:58px;line-height:1;font-weight:900;margin:0 0 12px;white-space:nowrap}.agenda-subtitle{font-size:17px!important;line-height:1.35!important;font-weight:400!important;color:#A3AAB5!important;margin:0!important}.agenda-card-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;width:100%}.agenda-card{min-height:168px}.agenda-card .stat-title{font-size:30px}
-.code-tall-130 pre{max-height:43vh}.code-tall-150 pre{max-height:50vh}.code-tall-180 pre{max-height:59vh}.code-tall-200 pre{max-height:66vh}
+.code-tall-130 pre{max-height:52vh}.code-tall-150 pre{max-height:50vh}.code-tall-180 pre{max-height:59vh}.code-tall-200 pre{max-height:66vh}
 .formula-bullet{display:flex;align-items:center;gap:10px;margin-left:28px}.formula-bullet span,.asset-bullet span{width:9px;height:9px;border-radius:50%;background:#1f6feb;display:inline-block;flex:0 0 auto}.asset-bullet{display:flex;align-items:center;gap:10px;margin-left:28px}
 .image-caption-row{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;width:100%;margin-bottom:8px}.image-caption-row p{font-size:18px;line-height:1.4;margin:0;text-align:left;color:var(--text-1)}
 .text-link{color:#0969da;text-decoration:none}.text-link:hover{text-decoration:underline}.muted-glossary{color:#8b949e!important;font-size:13px!important;line-height:1.42!important}.content-card{background:#fff;border:1px solid #F1F3F5;border-radius:20px;box-shadow:0 4px 16px rgba(0,0,0,.04);padding:28px 32px;box-sizing:border-box}.danger-label,.danger-text{color:#c62828!important}.danger-label{font-weight:800}.equal-image-row img{height:42vh!important;max-height:42vh!important;object-fit:contain}.vertical-center-content{display:flex;flex-direction:column;justify-content:center}
+
+
+section[data-page="3"] .main-scroll{max-height:calc(100vh - 120px)}
+section[data-page="3"] .agenda-head{margin-bottom:32px}
+section[data-page="3"] .agenda-card-grid{gap:18px 24px}
+section[data-page="3"] .agenda-card{min-height:136px;padding:22px 28px}
+section[data-page="3"] .agenda-card .stat-num{margin-bottom:12px}
+section[data-page="3"] .agenda-card .stat-title{font-size:25px;margin-bottom:8px}
+section[data-page="3"] .agenda-card .stat-desc{font-size:16px;line-height:1.38}
+
+
+.formula-card{background:#fff;border:1px solid #F1F3F5;border-radius:20px;box-shadow:0 4px 16px rgba(0,0,0,.04);padding:26px 32px;margin:14px 0 18px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px 28px}
+.formula-card .formula-bullet{margin:0;font-size:17px;line-height:1.45}
+.summary-card{margin-top:24px;padding:32px 36px}.summary-card p{margin-bottom:18px;line-height:1.75}
 
 @media(max-width:900px){.two-col{grid-template-columns:1fr}.slide{padding:34px 26px}.left-bottom-media{max-width:100%}.side-scroll{max-height:34vh}}
 </style>
@@ -199,7 +213,7 @@ section[data-page="3"] .main-scroll{display:flex;flex-direction:column;justify-c
   <section class="slide" data-page="12" data-title="二、只有模糊想法时：用结构化公式补全画面">
     <p class="kicker">第二章</p>
     <div class="formula-layout">
-      <main class="main-scroll"><h1 class="slide-title"><strong>二、只有模糊想法时：用结构化公式补全画面</strong></h1><p>结构化公式的价值，帮助模型稳定补齐画面信息。</p><h3><strong>2.1 结构化公式：先定维度，再补细节</strong></h3><p>核心公式：每次描述图片时，至少覆盖以下 9 个维度。</p><p class="formula-bullet"><span></span>核心主体</p><p class="formula-bullet"><span></span>场景设定</p><p class="formula-bullet"><span></span>构图视角</p><p class="formula-bullet"><span></span>光照氛围</p><p class="formula-bullet"><span></span>风格</p><p class="formula-bullet"><span></span>色彩色调</p><p class="formula-bullet"><span></span>文字与图形</p><p class="formula-bullet"><span></span>细节与材质</p><p class="formula-bullet"><span></span>图片比例</p><p>使用方式：把结构化公式和模糊创意合并，让模型补齐缺失细节。</p></main>
+      <main class="main-scroll"><h1 class="slide-title"><strong>二、只有模糊想法时：用结构化公式补全画面</strong></h1><p>结构化公式的价值，帮助模型稳定补齐画面信息。</p><h3><strong>2.1 结构化公式：先定维度，再补细节</strong></h3><p>核心公式：每次描述图片时，至少覆盖以下 9 个维度。</p><div class="formula-card"><p class="formula-bullet"><span></span>核心主体</p><p class="formula-bullet"><span></span>场景设定</p><p class="formula-bullet"><span></span>构图视角</p><p class="formula-bullet"><span></span>光照氛围</p><p class="formula-bullet"><span></span>风格</p><p class="formula-bullet"><span></span>色彩色调</p><p class="formula-bullet"><span></span>文字与图形</p><p class="formula-bullet"><span></span>细节与材质</p><p class="formula-bullet"><span></span>图片比例</p></div><p>使用方式：把结构化公式和模糊创意合并，让模型补齐缺失细节。</p></main>
       
     </div>
     <div class="deck-footer"><span>AI 生图经验分享</span><span class="slide-number" data-current="12" data-total="51"></span></div>
@@ -286,8 +300,7 @@ section[data-page="3"] .main-scroll{display:flex;flex-direction:column;justify-c
     <div class="single-col">
       <main class="main-scroll"><h1 class="slide-title">如果生成图与参考图存在差距</h1><p>如果生成图与参考图存在差距，进入对比迭代：</p><div class="code-wrap">
   <div class="code-title"></div>
-  <pre><code>
-请你将生成图与上文的参考图做一个详细的对比，找到两张图之间的差距并点明具体的问题一一罗列，并重新生成，保证完整的风格、质感、光影等完全一致</code></pre>
+  <pre><code>请你将生成图与上文的参考图做一个详细的对比，找到两张图之间的差距并点明具体的问题一一罗列，并重新生成，保证完整的风格、质感、光影等完全一致</code></pre>
 </div><div class="bottom-media"><img class="zoomable" src="images/rId15_image11.png" alt="rId15" loading="lazy"></div></main>
       
     </div>
@@ -298,8 +311,7 @@ section[data-page="3"] .main-scroll{display:flex;flex-direction:column;justify-c
     <div class="single-col">
       <main class="main-scroll"><h1 class="slide-title">第二次迭代：重点修正光源、材质和构图</h1><div class="code-wrap">
   <div class="code-title"></div>
-  <pre><code>
-结果依旧偏差，重新比对分析，特别是光源和材质，重新生成，保证和参考图完全一致</code></pre>
+  <pre><code>结果依旧偏差，重新比对分析，特别是光源和材质，重新生成，保证和参考图完全一致</code></pre>
 </div><div class="bottom-media"><img class="zoomable" src="images/rId16_image12.png" alt="rId16" loading="lazy"></div></main>
       
     </div>
@@ -310,8 +322,7 @@ section[data-page="3"] .main-scroll{display:flex;flex-direction:column;justify-c
     <div class="single-col">
       <main class="main-scroll"><h1 class="slide-title">第三次迭代：结果已经接近，可用于总结稳定约束</h1><div class="code-wrap">
   <div class="code-title"></div>
-  <pre><code>
-光效和质感还是有偏差，严格比对分析，修正结果，继续生成，保证完全一致</code></pre>
+  <pre><code>光效和质感还是有偏差，严格比对分析，修正结果，继续生成，保证完全一致</code></pre>
 </div><p>输入图像作为参考，可以显著降低试错成本。</p><div class="bottom-media"><img class="zoomable" src="images/rId17_image13.png" alt="rId17" loading="lazy"><img class="zoomable" src="images/rId18_image14.png" alt="rId18" loading="lazy"><img class="zoomable" src="images/rId13_image9.png" alt="rId13" loading="lazy"></div></main>
       
     </div>
@@ -1317,7 +1328,7 @@ typography-quality.md</code></pre>
   <section class="slide" data-page="48" data-title="END：把 AI 生图当成可复用流程，而不是一次次性碰运气">
     <p class="kicker">收束</p>
     <div class="single-col">
-      <main class="main-scroll vertical-center-content"><h1 class="slide-title"><strong>END：把 AI 生图当成可复用流程，而不是一次次性碰运气</strong></h1><p>一句话总结：高质量AI生图工作流 = 明确参考 + 结构化 Prompt + 对比迭代 + 工具沉淀。</p><p>对于个人，重点是建立稳定的 Prompt 写法；</p><p>对于团队，重点是把成功案例沉淀为 Skill、模板和项目规则，让经验可以复用、批量化和持续优化。</p><p>建议：“分析 → 生成 → 对比 → 优化 → 沉淀”的闭环，可以先从一个工作的高频场景开始实践。</p></main>
+      <main class="main-scroll vertical-center-content"><h1 class="slide-title"><strong>END：把 AI 生图当成可复用流程，而不是一次次性碰运气</strong></h1><div class="content-card summary-card"><p>一句话总结：高质量AI生图工作流 = 明确参考 + 结构化 Prompt + 对比迭代 + 工具沉淀。</p><p>对于个人，重点是建立稳定的 Prompt 写法；</p><p>对于团队，重点是把成功案例沉淀为 Skill、模板和项目规则，让经验可以复用、批量化和持续优化。</p><p>建议：“分析 → 生成 → 对比 → 优化 → 沉淀”的闭环，可以先从一个工作的高频场景开始实践。</p></div></main>
       
     </div>
     <div class="deck-footer"><span>AI 生图经验分享</span><span class="slide-number" data-current="48" data-total="51"></span></div>
