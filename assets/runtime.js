@@ -228,6 +228,7 @@
       barFill.style.width = ((n+1)/total*100)+'%';
       const numEl = document.querySelector('.slide-number');
       if (numEl) { numEl.setAttribute('data-current', n+1); numEl.setAttribute('data-total', total); }
+      window.dispatchEvent(new CustomEvent('htmlppt:slidechange', { detail: { current: n + 1, total: total, index: n } }));
 
       // notes (bottom overlay)
       const note = slides[n].querySelector('.notes, aside.notes, .speaker-notes');
@@ -930,6 +931,13 @@
       const ind = document.querySelector('.anim-indicator');
       if (ind) ind.textContent = a;
     }
+
+    window.HtmlPptNav = {
+      prev: function(){ go(idx - 1); },
+      next: function(){ go(idx + 1); },
+      goTo: function(page){ go((parseInt(page, 10) || 1) - 1); },
+      getState: function(){ return { current: idx + 1, total: total, index: idx }; }
+    };
 
     document.addEventListener('keydown', function (e) {
       if (e.metaKey||e.ctrlKey||e.altKey) return;
