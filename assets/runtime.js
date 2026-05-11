@@ -225,6 +225,11 @@
         s.classList.toggle('is-prev', i<n);
       });
       idx = n;
+      window.scrollTo(0, 0);
+      document.documentElement.scrollTop = 0;
+      document.body.scrollTop = 0;
+      slides[n].scrollTop = 0;
+      slides[n].querySelectorAll('.main-scroll,.side-scroll').forEach(el => { el.scrollTop = 0; });
       barFill.style.width = ((n+1)/total*100)+'%';
       const numEl = document.querySelector('.slide-number');
       if (numEl) { numEl.setAttribute('data-current', n+1); numEl.setAttribute('data-total', total); }
@@ -940,6 +945,7 @@
     };
 
     document.addEventListener('keydown', function (e) {
+      if (e.target && e.target.closest && e.target.closest('input, textarea, select, [contenteditable="true"]')) return;
       if (e.metaKey||e.ctrlKey||e.altKey) return;
       switch (e.key) {
         case 'ArrowRight': case ' ': case 'PageDown': case 'Enter': go(idx+1); e.preventDefault(); break;
