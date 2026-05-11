@@ -2,6 +2,8 @@
 <html lang="zh-CN" data-theme="minimal-white">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow,noarchive">
+<meta name="googlebot" content="noindex,nofollow,noarchive">
 <title>AI生图经验分享，从提示词到可复用工作流</title>
 <link rel="stylesheet" href="assets/fonts.css">
 <link rel="stylesheet" href="assets/base.css">
@@ -35,6 +37,7 @@ img.zoomable{width:100%;max-height:86vh;object-fit:contain;object-position:left 
 .bottom-media img:first-child:nth-last-child(2){max-width:calc(50% - 8px)}
 .code-wrap{background:#f5f5f6;border:1px solid var(--border);border-radius:14px;padding:10px 12px;margin:0 0 12px}
 .code-title{font-size:12px;font-weight:700;color:var(--text-2);margin-bottom:6px}
+.code-title:empty{display:none}
 pre{margin:0;max-height:33vh;overflow:auto;font-size:12px;line-height:1.55;white-space:pre-wrap}
 section[data-page="40"] pre{max-height:66vh}
 section[data-page="42"] pre{max-height:66vh}
@@ -57,11 +60,26 @@ strong{font-weight:800}
 .thanks-slide{justify-content:center}
 .thanks-main{height:100%;display:flex;align-items:center;justify-content:center;text-align:center}
 .thanks-title{font-size:128px;line-height:1;font-weight:900;letter-spacing:.02em;margin:0}
-.deck-bottom-nav{position:fixed;left:50%;bottom:8px;transform:translateX(-50%);height:36px;display:flex;align-items:center;gap:8px;padding:2px 10px;background:rgba(255,255,255,.9);border:1px solid var(--border);border-radius:999px;box-shadow:0 6px 18px rgba(15,23,42,.08);z-index:40;backdrop-filter:blur(10px)}
-.deck-bottom-nav button{height:30px;min-width:72px;border:1px solid var(--border);border-radius:999px;background:var(--surface);color:var(--text-1);font:600 13px/1 var(--font-sans);cursor:pointer;padding:0 12px}
+.deck-bottom-nav{position:fixed;left:50%;bottom:8px;transform:translateX(-50%);height:66px;display:flex;align-items:center;gap:10px;padding:8px 14px;background:rgba(255,255,255,.92);border:1px solid var(--border);border-radius:999px;box-shadow:0 8px 24px rgba(15,23,42,.1);z-index:40;backdrop-filter:blur(10px)}
+.deck-bottom-nav button{height:42px;min-width:82px;border:0;border-radius:999px;background:var(--surface);color:var(--text-1);font:600 14px/1 var(--font-sans);cursor:pointer;padding:0 16px}
 .deck-bottom-nav button:hover:not(:disabled){background:var(--surface-2)}
 .deck-bottom-nav button:disabled{opacity:.42;cursor:not-allowed}
-.deck-bottom-nav .pager{height:30px;display:flex;align-items:center;margin-left:10px;padding-left:12px;border-left:1px solid var(--border);font:600 13px/1 var(--font-sans);color:var(--text-2);white-space:nowrap}
+.deck-bottom-nav .pager{height:42px;display:flex;align-items:center;gap:6px;margin-left:12px;padding-left:14px;border-left:1px solid var(--border);font:600 14px/1 var(--font-sans);color:var(--text-2);white-space:nowrap}.deck-bottom-nav .page-current{height:34px;min-width:44px;border:0;border-radius:999px;background:var(--surface);font:700 14px/1 var(--font-sans);color:var(--text-1);text-align:center;cursor:pointer}.deck-bottom-nav .page-input{height:34px;width:54px;border:0;border-radius:999px;background:var(--surface);font:700 14px/1 var(--font-sans);color:var(--text-1);text-align:center;outline:1px solid var(--border)}
+
+.stat-card{background:#fff;border:1px solid #F1F3F5;border-radius:20px;box-shadow:0 4px 16px rgba(0,0,0,.04);padding:28px 30px;text-align:left;box-sizing:border-box}
+.stat-num{font-size:13px;line-height:1;font-weight:700;letter-spacing:.16em;color:#A3AAB5;margin-bottom:18px}
+.stat-title{font-size:28px;line-height:1.18;font-weight:800;color:var(--text-1);margin-bottom:12px;white-space:normal}
+.stat-desc{font-size:18px;line-height:1.45;font-weight:400;color:var(--text-2);white-space:normal}
+section[data-page="2"] .focus-page{justify-content:flex-start;padding-top:6vh}
+section[data-page="2"] .main-scroll{display:block}
+.page2-top{margin-bottom:28px}.page2-goal h3{font-size:30px;line-height:1.28;margin:0 0 16px;color:var(--text-1)}
+.goal-card-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;width:100%}.goal-card{height:240px;display:flex;flex-direction:column;justify-content:center}
+section[data-page="3"] .main-scroll{display:flex;flex-direction:column;justify-content:center}.agenda-layout{width:100%}.agenda-head{margin-bottom:36px}.agenda-head .slide-title{font-size:58px;line-height:1;font-weight:900;margin:0 0 12px;white-space:nowrap}.agenda-subtitle{font-size:17px!important;line-height:1.35!important;font-weight:400!important;color:#A3AAB5!important;margin:0!important}.agenda-card-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;width:100%}.agenda-card{min-height:168px}.agenda-card .stat-title{font-size:30px}
+.code-tall-130 pre{max-height:43vh}.code-tall-150 pre{max-height:50vh}.code-tall-180 pre{max-height:59vh}.code-tall-200 pre{max-height:66vh}
+.formula-bullet{display:flex;align-items:center;gap:10px;margin-left:28px}.formula-bullet span,.asset-bullet span{width:9px;height:9px;border-radius:50%;background:#1f6feb;display:inline-block;flex:0 0 auto}.asset-bullet{display:flex;align-items:center;gap:10px;margin-left:28px}
+.image-caption-row{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;width:100%;margin-bottom:8px}.image-caption-row p{font-size:18px;line-height:1.4;margin:0;text-align:left;color:var(--text-1)}
+.text-link{color:#0969da;text-decoration:none}.text-link:hover{text-decoration:underline}.muted-glossary{color:#8b949e!important;font-size:13px!important;line-height:1.42!important}.content-card{background:#fff;border:1px solid #F1F3F5;border-radius:20px;box-shadow:0 4px 16px rgba(0,0,0,.04);padding:28px 32px;box-sizing:border-box}.danger-label,.danger-text{color:#c62828!important}.danger-label{font-weight:800}.equal-image-row img{height:42vh!important;max-height:42vh!important;object-fit:contain}.vertical-center-content{display:flex;flex-direction:column;justify-content:center}
+
 @media(max-width:900px){.two-col{grid-template-columns:1fr}.slide{padding:34px 26px}.left-bottom-media{max-width:100%}.side-scroll{max-height:34vh}}
 </style>
 
@@ -77,7 +95,7 @@ strong{font-weight:800}
   <section class="slide" data-page="2" data-title="定位 / 目标">
     <p class="kicker">开场</p>
     <div class="single-col focus-page">
-      <main class="main-scroll"><h1 class="slide-title"><strong class="allowed-bold">定位</strong> / <strong class="allowed-bold">目标</strong></h1><p><strong class="allowed-bold">定位：</strong>这不是一份单纯的提示词合集，而是一套的 AI 生图工作流。</p><p><strong class="allowed-bold">核心方法是：</strong>先拆解参考，再结构化描述，持续对比迭代，最后沉淀为可复用的 Agent / Skill。</p><p><strong class="allowed-bold">目标：</strong>如何从参考图反推 Prompt；如何把模糊需求整理成结构化 Prompt；如何通过 Loop 和 Skill 把出图能力标准化。</p></main>
+      <main class="main-scroll"><div class="page2-top"><h1 class="slide-title"><strong class="allowed-bold">定位</strong> / <strong class="allowed-bold">目标</strong></h1><p><strong class="allowed-bold">定位：</strong>这不是一份单纯的提示词合集，而是一套的 AI 生图工作流。</p><p><strong class="allowed-bold">核心方法是：</strong>先拆解参考，再结构化描述，持续对比迭代，最后沉淀为可复用的 Agent / Skill。</p></div><div class="page2-goal"><h3><strong class="allowed-bold">目标：</strong></h3><div class="goal-card-grid"><article class="stat-card goal-card"><div class="stat-num">01</div><div class="stat-title">参考图逆向</div><div class="stat-desc">如何从参考图反推 Prompt</div></article><article class="stat-card goal-card"><div class="stat-num">02</div><div class="stat-title">结构化描述</div><div class="stat-desc">如何把模糊需求整理成结构化 Prompt</div></article><article class="stat-card goal-card"><div class="stat-num">03</div><div class="stat-title">工作流标准化</div><div class="stat-desc">如何通过 Loop 和 Skill 把出图能力标准化</div></article></div></div></main>
       
     </div>
     <div class="deck-footer"><span>AI 生图经验分享</span><span class="slide-number" data-current="2" data-total="51"></span></div>
@@ -85,7 +103,7 @@ strong{font-weight:800}
   <section class="slide" data-page="3" data-title="大纲">
     <p class="kicker">演讲大纲</p>
     <div class="single-col focus-page">
-      <main class="main-scroll"><h1 class="slide-title">大纲</h1><p><strong class="allowed-bold">1. 逆向工程：</strong>从参考图反推出可用提示词</p><p><strong class="allowed-bold">2. 结构化生成：</strong>把模糊想法整理成稳定 Prompt</p><p><strong class="allowed-bold">3. 图生图组图：</strong>用对比迭代逼近参考风格</p><p><strong class="allowed-bold">4. 精细化编辑：</strong>按视角、场景、材质、光照等变量控制结果</p><p><strong class="allowed-bold">5. 模型与工具选择：</strong>Image 2 / Nano-Banana-2、提示词工具与 Agent 模式</p><p><strong class="allowed-bold">6. 工作流沉淀：</strong>把经验固化为 Skill 和长期知识资产</p></main>
+      <main class="main-scroll"><div class="agenda-layout"><div class="agenda-head"><h1 class="slide-title">大纲</h1><p class="agenda-subtitle">本次分享的 6 个核心步骤</p></div><div class="agenda-card-grid"><article class="stat-card agenda-card"><div class="stat-num">01</div><div class="stat-title">逆向工程</div><div class="stat-desc">从参考图反推出可用提示词</div></article><article class="stat-card agenda-card"><div class="stat-num">02</div><div class="stat-title">结构化生成</div><div class="stat-desc">把模糊想法整理成稳定 Prompt</div></article><article class="stat-card agenda-card"><div class="stat-num">03</div><div class="stat-title">图生图组图</div><div class="stat-desc">用对比迭代逼近参考风格</div></article><article class="stat-card agenda-card"><div class="stat-num">04</div><div class="stat-title">精细化编辑</div><div class="stat-desc">按视角、场景、材质、光照等变量控制结果</div></article><article class="stat-card agenda-card"><div class="stat-num">05</div><div class="stat-title">模型与工具选择</div><div class="stat-desc">Image 2 / Nano-Banana-2、提示词工具与 Agent 模式</div></article><article class="stat-card agenda-card"><div class="stat-num">06</div><div class="stat-title">工作流沉淀</div><div class="stat-desc">把经验固化为 Skill 和长期知识资产</div></article></div></div></main>
       
     </div>
     <div class="deck-footer"><span>AI 生图经验分享</span><span class="slide-number" data-current="3" data-total="51"></span></div>
@@ -98,7 +116,7 @@ strong{font-weight:800}
   <section class="slide" data-page="5" data-title="第一步：素材搜集">
     <p class="kicker">第一章</p>
     <div class="single-col">
-      <main class="main-scroll"><h1 class="slide-title">第一步：素材搜集</h1><p>第一步：素材搜集。先找到类似目标风格、构图或材质的参考图。</p><div class="left-bottom-media"><img class="zoomable" src="images/rId5_image1.png" alt="rId5" loading="lazy"></div></main>
+      <main class="main-scroll"><h1 class="slide-title">第一步：素材搜集</h1><p>先找到类似目标风格、构图或材质的参考图。</p><div class="left-bottom-media"><img class="zoomable" src="images/rId5_image1.png" alt="rId5" loading="lazy"></div></main>
       
     </div>
     <div class="deck-footer"><span>AI 生图经验分享</span><span class="slide-number" data-current="5" data-total="51"></span></div>
@@ -106,7 +124,7 @@ strong{font-weight:800}
   <section class="slide" data-page="6" data-title="第二步：逆向推导">
     <p class="kicker">第一章</p>
     <div class="single-col">
-      <main class="main-scroll"><h1 class="slide-title">第二步：逆向推导</h1><p>第二步：逆向推导。使用“AI 图像分析师”提示词模板，让模型先拆图，再反推出可执行的生图指令。</p><p>AI提示词反推模板：</p><div class="code-wrap">
+      <main class="main-scroll"><h1 class="slide-title">第二步：逆向推导</h1><p>使用“AI 图像分析师”提示词模板，让模型先拆图，再反推出可执行的生图指令。</p><p>AI提示词反推模板：</p><div class="code-wrap code-tall-130">
   <div class="code-title">AI提示词反推模板：</div>
   <pre><code>
 你是一位专业的图像分析师和提示词工程师。
@@ -152,8 +170,8 @@ strong{font-weight:800}
   <section class="slide" data-page="9" data-title="若生成图与原图存在效果差距">
     <p class="kicker">第一章</p>
     <div class="single-col">
-      <main class="main-scroll"><h1 class="slide-title">若生成图与原图存在效果差距</h1><p>若生成图与原图存在效果差距，继续上传生成图，使用优化提示词：</p><div class="code-wrap">
-  <div class="code-title">若生成图与原图存在效果差距，继续上传生成图，使用优化提示词：</div>
+      <main class="main-scroll"><h1 class="slide-title">若生成图与原图存在效果差距</h1><p>继续上传生成图，使用优化提示词：</p><div class="code-wrap code-tall-200">
+  <div class="code-title"></div>
   <pre><code>
 经过测试，我把你反推出来的这套提示词，应用到即梦里面生成的效果较差，为了能够 100% 复刻出参考图。
 我将为你上传根据反推提示词生成后的图片，请你将此图与参考图做一个详细的对比，找到两张图之间的差距并点明具体的问题一一罗列，以 markdown 代码框格式输出最终输出优化的提示词。</code></pre>
@@ -173,7 +191,7 @@ strong{font-weight:800}
   <section class="slide" data-page="11" data-title="结论：多数情况下">
     <p class="kicker">第一章</p>
     <div class="single-col">
-      <main class="main-scroll"><h1 class="slide-title">结论：多数情况下</h1><h3><strong>结论：多数情况下，完成 1 次Loop 后，结果已经可以进入可用区间。</strong></h3><div class="bottom-media"><img class="zoomable" src="images/rId9_image5.png" alt="rId9" loading="lazy"></div></main>
+      <main class="main-scroll"><h1 class="slide-title">结论：多数情况下</h1><div class="bottom-media"><img class="zoomable" src="images/rId9_image5.png" alt="rId9" loading="lazy"></div></main>
       
     </div>
     <div class="deck-footer"><span>AI 生图经验分享</span><span class="slide-number" data-current="11" data-total="51"></span></div>
@@ -181,7 +199,7 @@ strong{font-weight:800}
   <section class="slide" data-page="12" data-title="二、只有模糊想法时：用结构化公式补全画面">
     <p class="kicker">第二章</p>
     <div class="formula-layout">
-      <main class="main-scroll"><h1 class="slide-title"><strong>二、只有模糊想法时：用结构化公式补全画面</strong></h1><p>结构化公式的价值，帮助模型稳定补齐画面信息。</p><h3><strong>2.1 结构化公式：先定维度，再补细节</strong></h3><p>核心公式：每次描述图片时，至少覆盖以下 9 个维度。</p><p>核心主体</p><p>场景设定</p><p>构图视角</p><p>光照氛围</p><p>风格</p><p>色彩色调</p><p>文字与图形</p><p>细节与材质</p><p>图片比例</p><p>使用方式：把结构化公式和模糊创意合并，让模型补齐缺失细节。</p></main>
+      <main class="main-scroll"><h1 class="slide-title"><strong>二、只有模糊想法时：用结构化公式补全画面</strong></h1><p>结构化公式的价值，帮助模型稳定补齐画面信息。</p><h3><strong>2.1 结构化公式：先定维度，再补细节</strong></h3><p>核心公式：每次描述图片时，至少覆盖以下 9 个维度。</p><p class="formula-bullet"><span></span>核心主体</p><p class="formula-bullet"><span></span>场景设定</p><p class="formula-bullet"><span></span>构图视角</p><p class="formula-bullet"><span></span>光照氛围</p><p class="formula-bullet"><span></span>风格</p><p class="formula-bullet"><span></span>色彩色调</p><p class="formula-bullet"><span></span>文字与图形</p><p class="formula-bullet"><span></span>细节与材质</p><p class="formula-bullet"><span></span>图片比例</p><p>使用方式：把结构化公式和模糊创意合并，让模型补齐缺失细节。</p></main>
       
     </div>
     <div class="deck-footer"><span>AI 生图经验分享</span><span class="slide-number" data-current="12" data-total="51"></span></div>
@@ -189,7 +207,7 @@ strong{font-weight:800}
   <section class="slide" data-page="13" data-title="案例：从“B 端科技感插画图标”开始补全 Prompt">
     <p class="kicker">第二章</p>
     <div class="single-col">
-      <main class="main-scroll"><h1 class="slide-title">案例：从“B 端科技感插画图标”开始补全 Prompt</h1><div class="code-wrap">
+      <main class="main-scroll"><h1 class="slide-title">案例：从“B 端科技感插画图标”开始补全 Prompt</h1><div class="code-wrap code-tall-150">
   <div class="code-title">案例：从“B 端科技感插画图标”开始补全 Prompt</div>
   <pre><code>
 我要B端科技感插画图标，我会先填写部分内容，请你根据我提供的内容，按照公式智能补充完整提示词，不同分类换行输出，整体不超过600字，输出时只保留文字，不要使用除了冒号、顿号、逗号、双引号以外的特殊字符。
@@ -225,7 +243,7 @@ strong{font-weight:800}
   <section class="slide" data-page="15" data-title="即梦效果 / gpt-image2.0效果">
     <p class="kicker">第二章</p>
     <div class="single-col">
-      <main class="main-scroll"><h1 class="slide-title">即梦效果 / gpt-image2.0效果</h1><table><tr><td>即梦效果：适合灵感发散与快速试方向</td><td>gpt-image2.0效果不错</td></tr></table><div class="bottom-media"><img class="zoomable" src="images/rId11_image7.png" alt="rId11" loading="lazy"><img class="zoomable" src="images/rId12_image8.png" alt="rId12" loading="lazy"></div></main>
+      <main class="main-scroll"><h1 class="slide-title">即梦效果 / gpt-image2.0效果</h1><div class="image-caption-row"><p>即梦效果：适合灵感发散与快速试方向</p><p>gpt-image2.0效果不错</p></div><div class="bottom-media"><img class="zoomable" src="images/rId11_image7.png" alt="rId11" loading="lazy"><img class="zoomable" src="images/rId12_image8.png" alt="rId12" loading="lazy"></div></main>
       
     </div>
     <div class="deck-footer"><span>AI 生图经验分享</span><span class="slide-number" data-current="15" data-total="51"></span></div>
@@ -246,7 +264,7 @@ strong{font-weight:800}
   <section class="slide" data-page="18" data-title="组图 Prompt">
     <p class="kicker">第三章</p>
     <div class="single-col">
-      <main class="main-scroll"><h1 class="slide-title">组图 Prompt</h1><div class="code-wrap">
+      <main class="main-scroll"><h1 class="slide-title">组图 Prompt</h1><div class="code-wrap code-tall-200">
   <div class="code-title">当目标是一次生成多张同风格图标时，可以使用“一系列”“组图”“生成几张图”等表达，明确触发组图逻辑。</div>
   <pre><code>
 › 参考画面风格，生成4张分别关于服务器、显示器、档案盒、盾牌的组图</code></pre>
@@ -267,7 +285,7 @@ strong{font-weight:800}
     <p class="kicker">第三章</p>
     <div class="single-col">
       <main class="main-scroll"><h1 class="slide-title">如果生成图与参考图存在差距</h1><p>如果生成图与参考图存在差距，进入对比迭代：</p><div class="code-wrap">
-  <div class="code-title">如果生成图与参考图存在差距，进入对比迭代：</div>
+  <div class="code-title"></div>
   <pre><code>
 请你将生成图与上文的参考图做一个详细的对比，找到两张图之间的差距并点明具体的问题一一罗列，并重新生成，保证完整的风格、质感、光影等完全一致</code></pre>
 </div><div class="bottom-media"><img class="zoomable" src="images/rId15_image11.png" alt="rId15" loading="lazy"></div></main>
@@ -279,7 +297,7 @@ strong{font-weight:800}
     <p class="kicker">第三章</p>
     <div class="single-col">
       <main class="main-scroll"><h1 class="slide-title">第二次迭代：重点修正光源、材质和构图</h1><div class="code-wrap">
-  <div class="code-title">第二次迭代：重点修正光源、材质和构图</div>
+  <div class="code-title"></div>
   <pre><code>
 结果依旧偏差，重新比对分析，特别是光源和材质，重新生成，保证和参考图完全一致</code></pre>
 </div><div class="bottom-media"><img class="zoomable" src="images/rId16_image12.png" alt="rId16" loading="lazy"></div></main>
@@ -291,7 +309,7 @@ strong{font-weight:800}
     <p class="kicker">第三章</p>
     <div class="single-col">
       <main class="main-scroll"><h1 class="slide-title">第三次迭代：结果已经接近，可用于总结稳定约束</h1><div class="code-wrap">
-  <div class="code-title">第三次迭代：结果已经接近，可用于总结稳定约束</div>
+  <div class="code-title"></div>
   <pre><code>
 光效和质感还是有偏差，严格比对分析，修正结果，继续生成，保证完全一致</code></pre>
 </div><p>输入图像作为参考，可以显著降低试错成本。</p><div class="bottom-media"><img class="zoomable" src="images/rId17_image13.png" alt="rId17" loading="lazy"><img class="zoomable" src="images/rId18_image14.png" alt="rId18" loading="lazy"><img class="zoomable" src="images/rId13_image9.png" alt="rId13" loading="lazy"></div></main>
@@ -307,7 +325,7 @@ strong{font-weight:800}
   <section class="slide" data-page="24" data-title="火山引擎的提示词工具">
     <p class="kicker">第四章</p>
     <div class="single-col">
-      <main class="main-scroll"><h1 class="slide-title">火山引擎的提示词工具</h1><p>火山引擎的提示词工具https://promptpilot.volcengine.com/home</p><div class="bottom-media"><img class="zoomable" src="images/rId19_image15.png" alt="rId19" loading="lazy"><img class="zoomable" src="images/rId20_image16.png" alt="rId20" loading="lazy"></div></main>
+      <main class="main-scroll"><h1 class="slide-title">火山引擎的提示词工具</h1><p>火山引擎的提示词工具<a class="text-link" href="https://promptpilot.volcengine.com/home" target="_blank" rel="noopener">https://promptpilot.volcengine.com/home</a></p><div class="bottom-media"><img class="zoomable" src="images/rId19_image15.png" alt="rId19" loading="lazy"><img class="zoomable" src="images/rId20_image16.png" alt="rId20" loading="lazy"></div></main>
       
     </div>
     <div class="deck-footer"><span>AI 生图经验分享</span><span class="slide-number" data-current="24" data-total="51"></span></div>
@@ -320,7 +338,7 @@ strong{font-weight:800}
   <section class="slide" data-page="26" data-title="局部控制（控制变量）">
     <p class="kicker">第五章</p>
     <div class="control-layout">
-      <main class="main-scroll"><h1 class="slide-title"><strong>局部控制（控制变量）</strong></h1><h3><strong>5.1 视角</strong></h3><p>编辑指令： 将图1的视角改为参考图2的视角</p><p>推荐词库： 2.5D视角、等距透视、平视视角、正面展示、轻微右转、主体居中</p><h3><strong>5.2 场景</strong></h3><p>编辑指令： 将图1的场景改为参考图2的场景</p><p>推荐词库： 深蓝纯色背景、极简背景、悬浮展示、科技场景、企业级界面</p><h3><strong>5.3 风格</strong></h3><p>编辑指令： 将图1的风格改为参考图2的风格</p><p>推荐词库： 玻璃拟态、B端科技感、3D UI图标、Apple风格、极简高级、企业级产品视觉</p><h3><strong>5.4 材质</strong></h3><p>编辑指令： 将图1的材质改为参考图2的材质</p><p>推荐词库： 半透明玻璃、亚克力、磨砂塑料、冰蓝描边、自然折射、柔和高光</p><h3><strong>5.5 光照</strong></h3><p>编辑指令： 将图1的光照改为参考图2的光照</p><p>推荐词库： 柔和冷光、顶部与左前方光源、轻微阴影、悬浮感、克制高光</p><h3><strong>5.6 色彩</strong></h3><p>编辑指令： 将图1的色彩改为参考图2的色彩</p><p>推荐词库： 深蓝背景、亮蓝、冰蓝、青色、白色高光、冷色调、高饱和</p><h3><strong>5.7 构图</strong></h3><p>编辑指令： 将图1的构图改为参考图2的构图</p><p>推荐词库： 主体居中、小巧精致、占画面35%到45%、留白充足、比例统一</p><h3><strong>5.8 细节</strong></h3><p>编辑指令： 将图1的细节改为参考图2的细节</p><p>推荐词库： 圆角造型、边框细腻、结构轻薄、单一完整主体、无文字、无杂物</p></main>
+      <main class="main-scroll"><h1 class="slide-title"><strong>局部控制（控制变量）</strong></h1><h3><strong>5.1 视角</strong></h3><p>编辑指令： 将图1的视角改为参考图2的视角</p><p class="muted-glossary">推荐词库： 2.5D视角、等距透视、平视视角、正面展示、轻微右转、主体居中</p><h3><strong>5.2 场景</strong></h3><p>编辑指令： 将图1的场景改为参考图2的场景</p><p class="muted-glossary">推荐词库： 深蓝纯色背景、极简背景、悬浮展示、科技场景、企业级界面</p><h3><strong>5.3 风格</strong></h3><p>编辑指令： 将图1的风格改为参考图2的风格</p><p class="muted-glossary">推荐词库： 玻璃拟态、B端科技感、3D UI图标、Apple风格、极简高级、企业级产品视觉</p><h3><strong>5.4 材质</strong></h3><p>编辑指令： 将图1的材质改为参考图2的材质</p><p class="muted-glossary">推荐词库： 半透明玻璃、亚克力、磨砂塑料、冰蓝描边、自然折射、柔和高光</p><h3><strong>5.5 光照</strong></h3><p>编辑指令： 将图1的光照改为参考图2的光照</p><p class="muted-glossary">推荐词库： 柔和冷光、顶部与左前方光源、轻微阴影、悬浮感、克制高光</p><h3><strong>5.6 色彩</strong></h3><p>编辑指令： 将图1的色彩改为参考图2的色彩</p><p class="muted-glossary">推荐词库： 深蓝背景、亮蓝、冰蓝、青色、白色高光、冷色调、高饱和</p><h3><strong>5.7 构图</strong></h3><p>编辑指令： 将图1的构图改为参考图2的构图</p><p class="muted-glossary">推荐词库： 主体居中、小巧精致、占画面35%到45%、留白充足、比例统一</p><h3><strong>5.8 细节</strong></h3><p>编辑指令： 将图1的细节改为参考图2的细节</p><p class="muted-glossary">推荐词库： 圆角造型、边框细腻、结构轻薄、单一完整主体、无文字、无杂物</p></main>
       
     </div>
     <div class="deck-footer"><span>AI 生图经验分享</span><span class="slide-number" data-current="26" data-total="51"></span></div>
@@ -363,7 +381,7 @@ strong{font-weight:800}
   <pre><code>
 “请作为图像分析大师，深度解析这张图。请按照：核心主体、场景环境、构图视角、光照氛围、艺术风格、色彩搭配、文字图形、细节质感这 8 个维度进行解构，并最终合并为一段充满画面描述感的自然语言提示词。”
 NB2 擅长理解长句，可以将公式转化为一个“叙事性段落”。</code></pre>
-</div><h3><strong>精细化编辑</strong></h3><p><strong>对话式局部重绘</strong>，通过文字即可精准控制。</p><p>全局风格迁移： 上传图 A，输入：“保持图 A 的构图和主体，将其风格转变为{ }</p><p>局部元素替换： “把元素 A换成元素 B”</p><p>多图融合： “参考图 1 的动作，结合图 2 的色彩和光影氛围，生成一张全新的 {}。”</p></main>
+</div><h3><strong>精细化编辑</strong></h3><p>对话式局部重绘，通过文字即可精准控制。</p><p>全局风格迁移： 上传图 A，输入：“保持图 A 的构图和主体，将其风格转变为{ }</p><p>局部元素替换： “把元素 A换成元素 B”</p><p>多图融合： “参考图 1 的动作，结合图 2 的色彩和光影氛围，生成一张全新的 {}。”</p></main>
       
     </div>
     <div class="deck-footer"><span>AI 生图经验分享</span><span class="slide-number" data-current="31" data-total="51"></span></div>
@@ -379,7 +397,7 @@ NB2 擅长理解长句，可以将公式转化为一个“叙事性段落”。<
   <section class="slide" data-page="33" data-title="八、建议使用 Agent 模式：从临时对话到长期工作流">
     <p class="kicker">第八章</p>
     <div class="single-col">
-      <main class="main-scroll"><h1 class="slide-title"><strong>八、建议使用 Agent 模式：从临时对话到长期工作流</strong></h1><p>在生产环境中，不建议长期停留在 Web Chat 模式，普通对话上下文有限，规则容易丢失；</p><p>原因：临时对话的上下文窗口有限，长期复用能力弱。</p><p><strong>更推荐使用 Agent，把固定规则、负面提示词和工作流沉淀下来。</strong></p><p>可将稳定可复用的提示词沉淀为 Skill，作为长期记忆，并持续优化触发词，提高出图效率与准确性。</p><p>创建 agent.md，用于存储一些系统信息、负面提示词和固定规则。</p></main>
+      <main class="main-scroll"><h1 class="slide-title"><strong>八、建议使用 Agent 模式：从临时对话到长期工作流</strong></h1><div class="content-card"><p>在生产环境中，不建议长期停留在 Web Chat 模式，普通对话上下文有限，规则容易丢失；</p><p>原因：临时对话的上下文窗口有限，长期复用能力弱。</p><p><strong>更推荐使用 Agent，把固定规则、负面提示词和工作流沉淀下来。</strong></p><p>可将稳定可复用的提示词沉淀为 Skill，作为长期记忆，并持续优化触发词，提高出图效率与准确性。</p><p>创建 agent.md，用于存储一些系统信息、负面提示词和固定规则。</p></div></main>
       
     </div>
     <div class="deck-footer"><span>AI 生图经验分享</span><span class="slide-number" data-current="33" data-total="51"></span></div>
@@ -387,7 +405,7 @@ NB2 擅长理解长句，可以将公式转化为一个“叙事性段落”。<
   <section class="slide" data-page="34" data-title="九、可沉淀的长期知识资产">
     <p class="kicker">第九章</p>
     <div class="single-col">
-      <main class="main-scroll"><h1 class="slide-title"><strong>九、可沉淀的长期知识资产</strong></h1><p>真正有复利的不是某一次出图，而是把可复用规则沉淀下来。</p><p>固定提示词模板</p><p>Skill 知识库</p><p>AGENTS.md</p><p>项目级规则</p><p>可持续沉淀的工作流经验</p><h3><strong>核心工作流：Loop</strong></h3><p>分析 → 生成 → 对比 → 优化 → 再生成</p></main>
+      <main class="main-scroll"><h1 class="slide-title"><strong>九、可沉淀的长期知识资产</strong></h1><div class="content-card"><p>真正有复利的不是某一次出图，而是把可复用规则沉淀下来。</p><p class="asset-bullet"><span></span>固定提示词模板</p><p class="asset-bullet"><span></span>Skill 知识库</p><p class="asset-bullet"><span></span>AGENTS.md</p><p class="asset-bullet"><span></span>项目级规则</p><p class="asset-bullet"><span></span>可持续沉淀的工作流经验</p><h3><strong>核心工作流：Loop</strong></h3><p>分析 → 生成 → 对比 → 优化 → 再生成</p></div></main>
       
     </div>
     <div class="deck-footer"><span>AI 生图经验分享</span><span class="slide-number" data-current="34" data-total="51"></span></div>
@@ -423,7 +441,7 @@ NB2 擅长理解长句，可以将公式转化为一个“叙事性段落”。<
   <section class="slide" data-page="36" data-title="10.1 agent分析的具体过程">
     <p class="kicker">第十章</p>
     <div class="single-col">
-      <main class="main-scroll"><h1 class="slide-title"><strong>10.1 agent分析的具体过程</strong></h1><div class="code-wrap">
+      <main class="main-scroll"><h1 class="slide-title"><strong>10.1 agent分析的具体过程</strong></h1><div class="code-wrap code-tall-180">
   <div class="code-title">10.1 agent分析的具体过程</div>
   <pre><code>
 使用当前图片作为唯一参考图，严格复刻其版式、信息层级、配色和构图，生成一张超高清中文产品设计规范海报。重点修正：所有中文文字、数字、图标和表单示例必须保持原始宽高比，禁止任何横向或纵向拉伸，禁止字体被压扁或拉长，确保字形自然、标准、清晰可读。所有文本使用正常字宽（100% horizontal scale, 100% vertical scale），字符间距、行距、段落间距均保持均衡，避免字形变形。
@@ -539,7 +557,7 @@ NB2 擅长理解长句，可以将公式转化为一个“叙事性段落”。<
   <section class="slide" data-page="38" data-title="10.2 固化输入输出，创建 Skill / 10.3 优化迭代 Skill">
     <p class="kicker">第十章</p>
     <div class="single-col">
-      <main class="main-scroll"><h1 class="slide-title"><strong>10.2 固化输入输出，创建 Skill</strong></h1><p>可将稳定可复用的提示词沉淀为 Skill，作为长期记忆，并持续优化触发词，提高出图效率与准确性。</p><h3><strong>10.3 优化迭代 Skill</strong></h3><div class="bottom-media"><img class="zoomable" src="images/rId24_image20.png" alt="rId24" loading="lazy"><img class="zoomable" src="images/rId25_image21.png" alt="rId25" loading="lazy"></div></main>
+      <main class="main-scroll"><h1 class="slide-title"><strong>10.2 固化输入输出，创建 Skill</strong></h1><p>可将稳定可复用的提示词沉淀为 Skill，作为长期记忆，并持续优化触发词，提高出图效率与准确性。</p><h3><strong>10.3 优化迭代 Skill</strong></h3><div class="bottom-media equal-image-row"><img class="zoomable" src="images/rId24_image20.png" alt="rId24" loading="lazy"><img class="zoomable" src="images/rId25_image21.png" alt="rId25" loading="lazy"></div></main>
       
     </div>
     <div class="deck-footer"><span>AI 生图经验分享</span><span class="slide-number" data-current="38" data-total="51"></span></div>
@@ -602,7 +620,7 @@ NB2 擅长理解长句，可以将公式转化为一个“叙事性段落”。<
   <section class="slide" data-page="41" data-title="启发：比如以后可以沉淀">
     <p class="kicker">第十章</p>
     <div class="single-col">
-      <main class="main-scroll"><h1 class="slide-title">启发：比如以后可以沉淀</h1><h3><strong>启发：比如以后可以沉淀：</strong></h3><p>form-label-width.md</p><p>query-area-breakpoints.md</p><p>table-column-config.md</p><p>modal-layout.md</p><p>upload-component.md</p><p>...</p><h3><strong>最终迭代后的 Skill 内容</strong></h3><p>“图库化、模块化、矩阵化、CLI/工具化、可迭代”设计。</p></main>
+      <main class="main-scroll"><h1 class="slide-title">启发：比如以后可以沉淀</h1><div class="content-card"><p>form-label-width.md</p><p>query-area-breakpoints.md</p><p>table-column-config.md</p><p>modal-layout.md</p><p>upload-component.md</p><p>...</p><h3><strong>最终迭代后的 Skill 内容</strong></h3><p>“图库化、模块化、矩阵化、CLI/工具化、可迭代”设计。</p></div></main>
       
     </div>
     <div class="deck-footer"><span>AI 生图经验分享</span><span class="slide-number" data-current="41" data-total="51"></span></div>
@@ -1218,7 +1236,7 @@ UI 截图 / 组件 mockup
   <section class="slide" data-page="45" data-title="如果只有agent，适合临时需求">
     <p class="kicker">第十一章</p>
     <div class="single-col">
-      <main class="main-scroll"><h1 class="slide-title">如果只有agent，适合临时需求</h1><h3><strong>如果只有agent，适合临时需求：</strong></h3><p>偶尔生成一张图；</p><p>需求简单；</p><p>不需要保存一套固定工作流；</p><p>缺点是：</p><p>每次都要重新说明规则；</p><p>容易漏掉固定质量约束；</p><p>多图批量时风格不稳定；</p><p>不方便长期沉淀 prompt 模板；</p><p>对图生图、多参考图、mask 编辑、批量生成等流程支持不够系统。</p></main>
+      <main class="main-scroll"><h1 class="slide-title">如果只有agent，适合临时需求</h1><div class="content-card"><p>偶尔生成一张图；</p><p>需求简单；</p><p>不需要保存一套固定工作流；</p><p class="danger-label">缺点是：</p><p class="danger-text">每次都要重新说明规则；</p><p class="danger-text">容易漏掉固定质量约束；</p><p class="danger-text">多图批量时风格不稳定；</p><p class="danger-text">不方便长期沉淀 prompt 模板；</p><p class="danger-text">对图生图、多参考图、mask 编辑、批量生成等流程支持不够系统。</p></div></main>
       
     </div>
     <div class="deck-footer"><span>AI 生图经验分享</span><span class="slide-number" data-current="45" data-total="51"></span></div>
@@ -1226,7 +1244,7 @@ UI 截图 / 组件 mockup
   <section class="slide" data-page="46" data-title="Skill 的好处适合长期生产，更适合反复生成、持续迭代、想沉淀工作流的用法">
     <p class="kicker">第十一章</p>
     <div class="single-col">
-      <main class="main-scroll"><h1 class="slide-title"><strong>Skill 的好处适合长期生产，更适合反复生成、持续迭代、想沉淀工作流的用法</strong></h1><p>不用每次都说：</p><p>4K、高清、无锯齿、不要拉伸、参考图、保持主体、输出到文件……</p><p>skill 会把这些流程和约束固化下来。</p><p>多图批量更稳定</p><p>比如你以后说：</p><p>基于这段规范，生成 4 张不同风格设计规范图</p><p>skill 可以按固定模式拆：</p><p>规则总览版</p><p>场景示例版</p><p>对比说明版</p></main>
+      <main class="main-scroll"><h1 class="slide-title"><strong>Skill 的好处适合长期生产，更适合反复生成、持续迭代、想沉淀工作流的用法</strong></h1><p>不用每次都说：</p><p>4K、高清、无锯齿、不要拉伸、参考图、保持主体、输出到文件……</p><p>skill 会把这些流程和约束固化下来。</p><p>多图批量更稳定</p><div class="content-card"><p>比如你以后说：</p><p>基于这段规范，生成 4 张不同风格设计规范图</p><p>skill 可以按固定模式拆：</p><p>规则总览版</p><p>场景示例版</p><p>对比说明版</p></div></main>
       
     </div>
     <div class="deck-footer"><span>AI 生图经验分享</span><span class="slide-number" data-current="46" data-total="51"></span></div>
@@ -1299,7 +1317,7 @@ typography-quality.md</code></pre>
   <section class="slide" data-page="48" data-title="END：把 AI 生图当成可复用流程，而不是一次次性碰运气">
     <p class="kicker">收束</p>
     <div class="single-col">
-      <main class="main-scroll"><h1 class="slide-title"><strong>END：把 AI 生图当成可复用流程，而不是一次次性碰运气</strong></h1><p>一句话总结：高质量AI生图工作流 = 明确参考 + 结构化 Prompt + 对比迭代 + 工具沉淀。</p><p>对于个人，重点是建立稳定的 Prompt 写法；</p><p>对于团队，重点是把成功案例沉淀为 Skill、模板和项目规则，让经验可以复用、批量化和持续优化。</p><p>建议：“分析 → 生成 → 对比 → 优化 → 沉淀”的闭环，可以先从一个工作的高频场景开始实践。</p></main>
+      <main class="main-scroll vertical-center-content"><h1 class="slide-title"><strong>END：把 AI 生图当成可复用流程，而不是一次次性碰运气</strong></h1><p>一句话总结：高质量AI生图工作流 = 明确参考 + 结构化 Prompt + 对比迭代 + 工具沉淀。</p><p>对于个人，重点是建立稳定的 Prompt 写法；</p><p>对于团队，重点是把成功案例沉淀为 Skill、模板和项目规则，让经验可以复用、批量化和持续优化。</p><p>建议：“分析 → 生成 → 对比 → 优化 → 沉淀”的闭环，可以先从一个工作的高频场景开始实践。</p></main>
       
     </div>
     <div class="deck-footer"><span>AI 生图经验分享</span><span class="slide-number" data-current="48" data-total="51"></span></div>
@@ -1307,7 +1325,7 @@ typography-quality.md</code></pre>
   <section class="slide" data-page="49" data-title="本篇分享文档由 Codex Cli 整理完成">
     <p class="kicker">尾页</p>
     <div class="single-col">
-      <main class="main-scroll"><h1 class="slide-title"><strong>本篇分享文档由 Codex Cli 整理完成</strong></h1><div class="bottom-media"><img class="zoomable" src="images/rId30_image25.png" alt="rId30" loading="lazy"></div></main>
+      <main class="main-scroll"><h1 class="slide-title"><strong>本篇分享文档由 Codex Cli 整理完成</strong></h1><p><a class="text-link" href="https://my.feishu.cn/docx/AK9ndGPm0oRp6gxABSwcmh2AnXf?from=from_copylink" target="_blank" rel="noopener">https://my.feishu.cn/docx/AK9ndGPm0oRp6gxABSwcmh2AnXf?from=from_copylink</a></p><div class="bottom-media"><img class="zoomable" src="images/rId30_image25.png" alt="rId30" loading="lazy"></div></main>
       
     </div>
     <div class="deck-footer"><span>AI 生图经验分享</span><span class="slide-number" data-current="49" data-total="51"></span></div>
@@ -1315,12 +1333,12 @@ typography-quality.md</code></pre>
   <section class="slide" data-page="50" data-title="本篇PPT由“html-ppt-skill“生成">
     <p class="kicker">尾页</p>
     <div class="single-col">
-      <main class="main-scroll"><h1 class="slide-title">本篇PPT由“html-ppt-skill“生成</h1><p>输入</p><div class="code-wrap">
-  <div class="code-title">输入</div>
+      <main class="main-scroll"><h1 class="slide-title">本篇PPT由“html-ppt-skill“生成</h1><div class="code-wrap">
+  <div class="code-title"></div>
   <pre><code>
 我要把这个文档用这个 Skill 生成 PPT ，你帮我整理完整的中文提示词，以 markdown 代码框格式输出。 以下是我的初步要求，你要考虑进去并优化成提示词 #要求 页数帮我计算，每页信息密度不能太高，按现有文档的逻辑来，逻辑不能变化太大 希望保留的内容：文字内容在保留原意的基础上允许优化，代码块内容显示不下可以用生图工具或者其他区块的方式呈现，图片内容全部保留 主题：AI生图经验分享-从提示词到可复用工作流 希望弱化的内容：代码块内容弱化，但不能删除，尽量展现全部内容 用 gpt-image2-ppt 生成一份关于「AI生图经验分享-从提示词到可复用工作流」的  PPT，风格用 gradient-glass。</code></pre>
-</div><p>输出提示词</p><div class="code-wrap">
-  <div class="code-title">输出提示词</div>
+</div><div class="code-wrap">
+  <div class="code-title"></div>
   <pre><code>
 请使用 html-ppt-skill，根据我上传的 Word 文档生成一份静态 HTML 演示文稿。
 
@@ -1462,7 +1480,7 @@ typography-quality.md</code></pre>
 <nav class="deck-bottom-nav" aria-label="幻灯片分页控制">
   <button type="button" id="deckPrevBtn">上一页</button>
   <button type="button" id="deckNextBtn">下一页</button>
-  <span class="pager" id="deckPager">第 1 页 / 共 51 页</span>
+  <span class="pager" id="deckPager">第 <button type="button" class="page-current" id="deckPageCurrent">1</button> 页 / 共 <span id="deckPageTotal">51</span> 页</span>
 </nav>
 
 <div class="modal" id="imgModal"><img id="modalImg" alt=""></div>
@@ -1496,14 +1514,42 @@ typography-quality.md</code></pre>
   const prevBtn = document.getElementById('deckPrevBtn');
   const nextBtn = document.getElementById('deckNextBtn');
   const pager = document.getElementById('deckPager');
-  if (!prevBtn || !nextBtn || !pager) return;
+  const currentBtn = document.getElementById('deckPageCurrent');
+  const totalEl = document.getElementById('deckPageTotal');
+  if (!prevBtn || !nextBtn || !pager || !currentBtn || !totalEl) return;
+  let latest = { current: 1, total: 1 };
 
   const update = (state) => {
-    const current = state.current;
-    const total = state.total;
-    pager.textContent = `第 ${current} 页 / 共 ${total} 页`;
-    prevBtn.disabled = current <= 1;
-    nextBtn.disabled = current >= total;
+    latest = { current: state.current, total: state.total };
+    currentBtn.textContent = state.current;
+    totalEl.textContent = state.total;
+    prevBtn.disabled = state.current <= 1;
+    nextBtn.disabled = state.current >= state.total;
+  };
+
+  const showInput = () => {
+    const input = document.createElement('input');
+    input.className = 'page-input';
+    input.type = 'number';
+    input.min = '1';
+    input.max = String(latest.total);
+    input.value = String(latest.current);
+    currentBtn.replaceWith(input);
+    input.focus();
+    input.select();
+    const finish = (commit) => {
+      if (commit && window.HtmlPptNav) {
+        const page = Math.max(1, Math.min(latest.total, parseInt(input.value, 10) || latest.current));
+        window.HtmlPptNav.goTo(page);
+      }
+      input.replaceWith(currentBtn);
+      if (window.HtmlPptNav) update(window.HtmlPptNav.getState());
+    };
+    input.addEventListener('keydown', (event) => {
+      if (event.key === 'Enter') finish(true);
+      if (event.key === 'Escape') finish(false);
+    });
+    input.addEventListener('blur', () => finish(false));
   };
 
   prevBtn.addEventListener('click', () => {
@@ -1512,6 +1558,7 @@ typography-quality.md</code></pre>
   nextBtn.addEventListener('click', () => {
     if (window.HtmlPptNav) window.HtmlPptNav.next();
   });
+  currentBtn.addEventListener('click', showInput);
   window.addEventListener('htmlppt:slidechange', (event) => update(event.detail));
   window.addEventListener('DOMContentLoaded', () => {
     requestAnimationFrame(() => {
