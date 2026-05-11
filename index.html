@@ -583,10 +583,16 @@ section[data-page="28"] .password-panel::after{display:none!important}
 pre,code{color:#B7C1D7!important}
 
 @media(max-width:900px){.two-col{grid-template-columns:1fr}.slide{padding:34px 26px}.left-bottom-media{max-width:100%}.side-scroll{max-height:34vh}}
+/* Version switch button */
+.version-switch{position:fixed;right:24px;top:24px;z-index:10020;height:57px;display:inline-flex;align-items:center;justify-content:center;padding:0 22px;border-radius:999px;background:rgba(8,12,25,.70);border:1px solid rgba(255,255,255,.16);box-shadow:0 10px 28px rgba(0,0,0,.30),inset 0 1px 0 rgba(255,255,255,.18);backdrop-filter:blur(16px) saturate(150%);-webkit-backdrop-filter:blur(16px) saturate(150%);color:#F7FAFF;font:700 14px/1 var(--font-sans);text-decoration:none;white-space:nowrap}
+.version-switch:hover{background:rgba(38,48,84,.86);text-decoration:none}
+
 </style>
 
 </head>
 <body data-themes="minimal-white" data-theme-base="assets/themes/">
+
+<a class="version-switch" href="v10/" aria-label="切换浅色">切换浅色</a>
 <div class="deck">
 
   <section class="slide cover" data-page="1" data-title="💡AI生图经验分享-从提示词到可复用工作流">
