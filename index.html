@@ -583,16 +583,17 @@ section[data-page="28"] .password-panel::after{display:none!important}
 pre,code{color:#B7C1D7!important}
 
 @media(max-width:900px){.two-col{grid-template-columns:1fr}.slide{padding:34px 26px}.left-bottom-media{max-width:100%}.side-scroll{max-height:34vh}}
-/* Version switch button */
-.version-switch{position:fixed;right:24px;top:24px;z-index:10020;height:57px;display:inline-flex;align-items:center;justify-content:center;padding:0 22px;border-radius:999px;background:rgba(8,12,25,.70);border:1px solid rgba(255,255,255,.16);box-shadow:0 10px 28px rgba(0,0,0,.30),inset 0 1px 0 rgba(255,255,255,.18);backdrop-filter:blur(16px) saturate(150%);-webkit-backdrop-filter:blur(16px) saturate(150%);color:#F7FAFF;font:700 14px/1 var(--font-sans);text-decoration:none;white-space:nowrap}
-.version-switch:hover{background:rgba(38,48,84,.86);text-decoration:none}
+
+/* Version switch button - final top layer */
+.version-switch{position:fixed!important;right:28px!important;top:28px!important;z-index:2147483647!important;display:inline-flex!important;align-items:center!important;justify-content:center!important;width:auto!important;max-width:calc(100vw - 56px)!important;visibility:visible!important;opacity:1!important;pointer-events:auto!important;text-decoration:none!important;white-space:nowrap!important;box-sizing:border-box!important;transform:none!important}
+.version-switch{height:57px!important;padding:0 24px!important;border-radius:999px!important;background:rgba(8,12,25,.76)!important;border:1px solid rgba(255,255,255,.18)!important;box-shadow:0 10px 28px rgba(0,0,0,.30),inset 0 1px 0 rgba(255,255,255,.18)!important;backdrop-filter:blur(16px) saturate(150%)!important;-webkit-backdrop-filter:blur(16px) saturate(150%)!important;color:#F7FAFF!important;font:700 14px/1 var(--font-sans)!important}
+.version-switch:hover{background:rgba(38,48,84,.90)!important;text-decoration:none!important}
 
 </style>
 
 </head>
 <body data-themes="minimal-white" data-theme-base="assets/themes/">
 
-<a class="version-switch" href="v10/" aria-label="切换浅色">切换浅色</a>
 <div class="deck">
 
   <section class="slide cover" data-page="1" data-title="💡AI生图经验分享-从提示词到可复用工作流">
@@ -1984,6 +1985,7 @@ typography-quality.md</code></pre>
   <button type="button" id="deckNextBtn">下一页</button>
   <span class="pager" id="deckPager">第 <button type="button" class="page-current" id="deckPageCurrent">1</button> 页 / 共 <span id="deckPageTotal">50</span> 页</span>
 </nav>
+<a class="version-switch" href="v10/" aria-label="切换浅色">切换浅色</a>
 
 <div class="modal" id="imgModal"><img id="modalImg" alt=""></div>
 <script>
