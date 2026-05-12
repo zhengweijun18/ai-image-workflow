@@ -575,12 +575,12 @@ section[data-page="28"] .password-panel::after{display:none!important}
 .stat-card:nth-of-type(3n),.goal-card:nth-of-type(3n),.agenda-card:nth-of-type(3n){border-color:rgba(255,105,207,.72)!important}
 .content-card,.formula-card,.summary-card,.card{border-color:rgba(133,146,195,.42)!important}
 .code-wrap{
-  background:rgba(7,10,21,.42)!important;
-  border:1px solid rgba(136,154,204,.13)!important;
+  background:rgba(15,21,42,.50)!important;
+  border:1px solid rgba(158,176,226,.20)!important;
   box-shadow:inset 0 1px 0 rgba(255,255,255,.055),0 8px 22px rgba(0,0,0,.18)!important;
 }
 .code-title{color:#9AA4BA!important}
-pre,code{color:#B7C1D7!important}
+pre,code{color:#C2CAE0!important}
 
 @media(max-width:900px){.two-col{grid-template-columns:1fr}.slide{padding:34px 26px}.left-bottom-media{max-width:100%}.side-scroll{max-height:34vh}}
 
@@ -2030,6 +2030,8 @@ typography-quality.md</code></pre>
   const currentBtn = document.getElementById('deckPageCurrent');
   const totalEl = document.getElementById('deckPageTotal');
   if (!prevBtn || !nextBtn || !currentBtn || !totalEl) return;
+  const versionSwitch = document.querySelector('.version-switch');
+  const versionTargetBase = versionSwitch ? versionSwitch.getAttribute('href').split('#')[0] : '';
   let latest = { current: 1, total: 1 };
   let inputEl = null;
 
@@ -2044,6 +2046,7 @@ typography-quality.md</code></pre>
   const update = (state) => {
     latest = { current: state.current, total: state.total };
     totalEl.textContent = state.total;
+    if (versionSwitch && versionTargetBase) versionSwitch.setAttribute('href', `${versionTargetBase}#/` + state.current);
     const locked = state.current === 28;
     document.body.classList.toggle('password-locked', locked);
     prevBtn.disabled = state.current <= 1;
@@ -2099,6 +2102,11 @@ typography-quality.md</code></pre>
   prevBtn.addEventListener('click', (event) => { event.preventDefault(); event.stopPropagation(); if (window.HtmlPptNav) window.HtmlPptNav.prev(); });
   nextBtn.addEventListener('click', (event) => { event.preventDefault(); event.stopPropagation(); if (latest.current !== 28 && window.HtmlPptNav) window.HtmlPptNav.next(); });
   currentBtn.addEventListener('click', (event) => { event.preventDefault(); event.stopPropagation(); openInput(); });
+  if (versionSwitch && versionTargetBase) {
+    versionSwitch.addEventListener('click', () => {
+      versionSwitch.setAttribute('href', `${versionTargetBase}#/` + latest.current);
+    });
+  }
   document.addEventListener('keydown', (event) => {
     if (latest.current !== 28) return;
     if (event.target && event.target.closest && event.target.closest('#deckPasswordInput')) return;

@@ -1625,6 +1625,8 @@ typography-quality.md</code></pre>
   const currentBtn = document.getElementById('deckPageCurrent');
   const totalEl = document.getElementById('deckPageTotal');
   if (!prevBtn || !nextBtn || !currentBtn || !totalEl) return;
+  const versionSwitch = document.querySelector('.version-switch');
+  const versionTargetBase = versionSwitch ? versionSwitch.getAttribute('href').split('#')[0] : '';
   let latest = { current: 1, total: 1 };
   let inputEl = null;
 
@@ -1639,6 +1641,7 @@ typography-quality.md</code></pre>
   const update = (state) => {
     latest = { current: state.current, total: state.total };
     totalEl.textContent = state.total;
+    if (versionSwitch && versionTargetBase) versionSwitch.setAttribute('href', `${versionTargetBase}#/` + state.current);
     const locked = state.current === 28;
     document.body.classList.toggle('password-locked', locked);
     prevBtn.disabled = state.current <= 1;
@@ -1694,6 +1697,11 @@ typography-quality.md</code></pre>
   prevBtn.addEventListener('click', (event) => { event.preventDefault(); event.stopPropagation(); if (window.HtmlPptNav) window.HtmlPptNav.prev(); });
   nextBtn.addEventListener('click', (event) => { event.preventDefault(); event.stopPropagation(); if (latest.current !== 28 && window.HtmlPptNav) window.HtmlPptNav.next(); });
   currentBtn.addEventListener('click', (event) => { event.preventDefault(); event.stopPropagation(); openInput(); });
+  if (versionSwitch && versionTargetBase) {
+    versionSwitch.addEventListener('click', () => {
+      versionSwitch.setAttribute('href', `${versionTargetBase}#/` + latest.current);
+    });
+  }
   document.addEventListener('keydown', (event) => {
     if (latest.current !== 28) return;
     if (event.target && event.target.closest && event.target.closest('#deckPasswordInput')) return;
