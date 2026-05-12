@@ -180,9 +180,10 @@ section[data-page="12"] .code-tall-150 pre{max-height:55vh!important}
 @media(max-width:900px){.two-col{grid-template-columns:1fr}.slide{padding:34px 26px}.left-bottom-media{max-width:100%}.side-scroll{max-height:34vh}}
 
 /* Version switch button - final top layer */
-.version-switch{position:fixed!important;right:28px!important;top:28px!important;z-index:2147483647!important;display:inline-flex!important;align-items:center!important;justify-content:center!important;width:auto!important;max-width:calc(100vw - 56px)!important;visibility:visible!important;opacity:1!important;pointer-events:auto!important;text-decoration:none!important;white-space:nowrap!important;box-sizing:border-box!important;transform:none!important}
+.version-switch{position:fixed!important;right:28px!important;top:28px!important;z-index:2147483647!important;display:inline-flex!important;align-items:center!important;justify-content:center!important;gap:8px!important;width:auto!important;max-width:calc(100vw - 56px)!important;visibility:visible!important;opacity:1!important;pointer-events:auto!important;text-decoration:none!important;white-space:nowrap!important;box-sizing:border-box!important;transform:none!important}
 .version-switch{height:63px!important;padding:0 26px!important;border:1px solid var(--border)!important;border-radius:999px!important;background:rgba(255,255,255,.94)!important;box-shadow:0 8px 24px rgba(15,23,42,.10)!important;backdrop-filter:blur(10px)!important;-webkit-backdrop-filter:blur(10px)!important;color:var(--text-1)!important;font:700 15px/1 var(--font-sans)!important}
 .version-switch:hover{background:var(--surface-2)!important;text-decoration:none!important}
+.version-switch-icon{display:inline-block!important;width:1.2em!important;height:1.2em!important;flex:0 0 auto!important;background:currentColor!important;mask:url("assets/icon-dark.svg") center/contain no-repeat!important;-webkit-mask:url("assets/icon-dark.svg") center/contain no-repeat!important}
 
 </style>
 
@@ -1580,7 +1581,7 @@ typography-quality.md</code></pre>
   <button type="button" id="deckNextBtn">下一页</button>
   <span class="pager" id="deckPager">第 <button type="button" class="page-current" id="deckPageCurrent">1</button> 页 / 共 <span id="deckPageTotal">50</span> 页</span>
 </nav>
-<a class="version-switch" href="../v11/" aria-label="切换深色">切换深色</a>
+<a class="version-switch" href="../v11/" aria-label="切换深色"><span class="version-switch-icon" aria-hidden="true"></span><span>切换深色</span></a>
 
 <div class="modal" id="imgModal"><img id="modalImg" alt=""></div>
 <script>
